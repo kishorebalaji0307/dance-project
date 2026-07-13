@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { Award, Users, Dumbbell } from "lucide-react";
+import aboutImg from "../../assets/images/about.png";
 
 const features = [
   {
@@ -69,7 +70,7 @@ const About = () => {
         >
 
           <img
-            src= "C:\\Users\\Danush Kumar N K\\Downloads\\ChatGPT Image Jul 11, 2026, 11_36_53 AM.png"
+            src={aboutImg}
             alt="5678 Dance & Fitness Studio"
             className="h-[520px] w-full object-cover transition duration-700 hover:scale-105"
           />
