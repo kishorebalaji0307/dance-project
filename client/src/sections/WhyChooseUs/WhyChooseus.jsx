@@ -42,14 +42,15 @@ const WhyChooseUs = () => {
   return (
     <section
       id="why-us"
-      className="relative overflow-hidden bg-[#060606] py-28"
+      className="relative overflow-hidden bg-gradient-to-b from-[#0A0A0A] to-[#050505] py-28"
     >
       {/* Background */}
-
       <div className="absolute inset-0">
         <div className="absolute left-1/2 top-0 h-[450px] w-[450px] -translate-x-1/2 rounded-full bg-[#D4AF37]/10 blur-[160px]" />
-
         <div className="absolute right-0 bottom-0 h-72 w-72 rounded-full bg-[#D4AF37]/5 blur-[120px]" />
+        
+        {/* Soft purple depth glow */}
+        <div className="absolute right-[10%] top-[20%] h-[400px] w-[400px] rounded-full bg-[#6B46C1]/3 blur-[150px] pointer-events-none" />
       </div>
 
       <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
@@ -100,15 +101,16 @@ const WhyChooseUs = () => {
                   y: -12,
                 }}
                 className="group relative overflow-hidden rounded-[30px]
-                border border-[#D4AF37]/20
+                border border-white/[0.06]
                 bg-gradient-to-b
-                from-[#161616]
-                to-[#090909]
+                from-white/[0.03]
+                to-white/[0.01]
                 p-8
+                backdrop-blur-md
                 transition-all
                 duration-500
-                hover:border-[#D4AF37]
-                hover:shadow-[0_20px_60px_rgba(212,175,55,.18)]"
+                hover:border-[#D4AF37]/50
+                hover:shadow-[0_20px_50px_rgba(212,175,55,0.12)]"
               >
                 {/* Background Number */}
 
@@ -189,12 +191,12 @@ const WhyChooseUs = () => {
           viewport={{ once: true }}
           transition={{ duration: .8 }}
           className="mt-24 rounded-[35px]
-          border border-[#D4AF37]/20
+          border border-[#D4AF37]/25
           bg-gradient-to-r
-          from-[#111111]
-          via-[#0d0d0d]
-          to-[#111111]
-          p-12 text-center"
+          from-[#0C0C0C]
+          via-[#141217]
+          to-[#0C0C0C]
+          p-12 text-center shadow-[0_15px_40px_rgba(0,0,0,0.5)]"
         >
           <p className="text-sm uppercase tracking-[0.35em] text-[#D4AF37]">
             OUR PROMISE

@@ -24,13 +24,14 @@ const About = () => {
   return (
     <section
       id="about"
-      className="relative overflow-hidden bg-[#0B0B0B] py-28"
+      className="relative overflow-hidden bg-gradient-to-b from-[#0A090D] via-[#0B0B0B] to-[#050505] py-28"
     >
       {/* Background Glow */}
-
       <div className="absolute left-0 top-0 h-[350px] w-[350px] rounded-full bg-[#D4AF37]/5 blur-[150px]" />
-
       <div className="absolute right-0 bottom-0 h-[350px] w-[350px] rounded-full bg-[#D4AF37]/5 blur-[150px]" />
+      
+      {/* Subtle deep indigo accent blur */}
+      <div className="absolute left-1/3 top-1/2 h-[400px] w-[400px] rounded-full bg-[#6B46C1]/4 blur-[160px] pointer-events-none" />
 
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
 
@@ -144,7 +145,7 @@ const About = () => {
 
               <div
                 key={index}
-                className="flex items-center gap-5 rounded-3xl border border-[#D4AF37]/20 bg-white/5 p-6 backdrop-blur-xl transition-all duration-300 hover:border-[#D4AF37]/60 hover:bg-[#D4AF37]/10"
+                className="flex items-center gap-5 rounded-3xl border border-white/[0.08] bg-white/[0.02] p-6 backdrop-blur-md transition-all duration-300 hover:border-[#D4AF37]/50 hover:bg-[#D4AF37]/5 hover:scale-[1.02] shadow-[0_8px_32px_rgba(0,0,0,0.3)] hover:shadow-[0_15px_40px_rgba(212,175,55,0.08)] cursor-default"
               >
 
                 <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-[#D4AF37]/10 text-[#D4AF37]">

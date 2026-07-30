@@ -6,14 +6,14 @@ const Founder = () => {
   return (
     <section
       id="founder"
-      className="relative overflow-hidden bg-[#070707] py-28"
+      className="relative overflow-hidden bg-gradient-to-b from-[#050505] to-[#08080C] py-28"
     >
-
       {/* Soft Gold Glow */}
-
       <div className="absolute left-1/2 top-0 h-[420px] w-[420px] -translate-x-1/2 rounded-full bg-[#D4AF37]/8 blur-[180px]" />
-
       <div className="absolute right-0 bottom-0 h-72 w-72 rounded-full bg-[#D4AF37]/5 blur-[140px]" />
+      
+      {/* Purple depth glow */}
+      <div className="absolute left-[15%] bottom-[10%] h-[400px] w-[400px] rounded-full bg-[#6B46C1]/4 blur-[160px] pointer-events-none" />
 
       {/* Light Grid */}
 
@@ -93,16 +93,16 @@ const Founder = () => {
           <div className="mt-12 grid gap-5 sm:grid-cols-2">
 
             <motion.div
-              whileHover={{ y: -6 }}
+              whileHover={{ y: -8 }}
               transition={{ duration: .3 }}
-              className="rounded-3xl border border-white/10 bg-white/[0.03] p-7 backdrop-blur-xl transition-all hover:border-[#D4AF37]/25"
+              className="rounded-3xl border border-white/[0.08] bg-white/[0.02] p-7 backdrop-blur-md transition-all hover:border-[#D4AF37]/40 shadow-lg hover:shadow-[0_15px_35px_rgba(212,175,55,0.06)]"
             >
 
               <h3 className="text-4xl font-black text-white">
                 500+
               </h3>
 
-              <div className="mt-3 h-[2px] w-14 rounded-full bg-[#D4AF37]/70" />
+              <div className="mt-3 h-[2px] w-14 rounded-full bg-gradient-to-r from-[#B8860B] to-[#D4AF37]" />
 
               <p className="mt-4 text-gray-400">
                 Students Trained
@@ -111,16 +111,16 @@ const Founder = () => {
             </motion.div>
 
             <motion.div
-              whileHover={{ y: -6 }}
+              whileHover={{ y: -8 }}
               transition={{ duration: .3 }}
-              className="rounded-3xl border border-white/10 bg-white/[0.03] p-7 backdrop-blur-xl transition-all hover:border-[#D4AF37]/25"
+              className="rounded-3xl border border-white/[0.08] bg-white/[0.02] p-7 backdrop-blur-md transition-all hover:border-[#D4AF37]/40 shadow-lg hover:shadow-[0_15px_35px_rgba(212,175,55,0.06)]"
             >
 
               <h3 className="text-4xl font-black text-white">
                 1+
               </h3>
 
-              <div className="mt-3 h-[2px] w-14 rounded-full bg-[#D4AF37]/70" />
+              <div className="mt-3 h-[2px] w-14 rounded-full bg-gradient-to-r from-[#B8860B] to-[#D4AF37]" />
 
               <p className="mt-4 text-gray-400">
                 Years of Excellence
@@ -132,7 +132,7 @@ const Founder = () => {
 
           {/* Button */}
 
-          <button
+          {/* <button
             className="group mt-14 inline-flex items-center gap-3 rounded-full
             border border-[#D4AF37]/30
             bg-[#D4AF37]/10
@@ -155,7 +155,7 @@ const Founder = () => {
               className="transition-transform duration-300 group-hover:translate-x-1"
             />
 
-          </button>
+          </button> */}
 
         </motion.div>
 

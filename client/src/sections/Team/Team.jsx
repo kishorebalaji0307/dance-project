@@ -5,18 +5,16 @@ const Team = () => {
   return (
     <section
       id="team"
-      className="relative overflow-hidden bg-black py-28"
+      className="relative overflow-hidden bg-gradient-to-b from-[#08080C] via-[#050505] to-[#0A0A0A] py-28"
     >
       {/* Background Glow */}
-
       <div className="absolute inset-0 overflow-hidden">
-
         <div className="absolute left-1/2 top-40 h-[550px] w-[550px] -translate-x-1/2 rounded-full bg-[#D4AF37]/10 blur-[180px]" />
-
         <div className="absolute -left-40 bottom-0 h-[300px] w-[300px] rounded-full bg-[#D4AF37]/5 blur-[150px]" />
-
         <div className="absolute -right-40 top-0 h-[300px] w-[300px] rounded-full bg-[#D4AF37]/5 blur-[150px]" />
-
+        
+        {/* Soft purple depth glow */}
+        <div className="absolute right-[10%] bottom-[15%] h-[450px] w-[450px] rounded-full bg-[#6B46C1]/4 blur-[160px] pointer-events-none" />
       </div>
 
       <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
@@ -52,7 +50,7 @@ const Team = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
-          className="mt-20 overflow-hidden rounded-[40px] border border-white/10 bg-white/5 backdrop-blur-2xl"
+          className="mt-20 overflow-hidden rounded-[40px] border border-white/[0.08] bg-[#0C0C0C]/40 backdrop-blur-2xl shadow-[0_20px_50px_rgba(0,0,0,0.55)] hover:border-[#D4AF37]/20 transition-colors duration-500"
         >
           <div className="grid items-center lg:grid-cols-2">
 
