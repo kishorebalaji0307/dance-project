@@ -3,9 +3,9 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "install-server": "npm install --prefix server",
-    "build": "npm run install-server",
+    "postinstall": "npm install --prefix server",
+    "build": "npm run postinstall",
     "start": "node server/index.js",
-    "dev": "npm run dev --prefix server"
+    "dev": "node server/index.js"
   }
 }
