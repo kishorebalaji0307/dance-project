@@ -163,7 +163,7 @@ const WhyChooseUs = () => {
 
                 {/* Button */}
 
-                <button
+                {/* <button
                   className="mt-10 flex items-center gap-3
                   font-semibold text-[#D4AF37]
                   transition duration-300
@@ -175,7 +175,7 @@ const WhyChooseUs = () => {
                     size={18}
                     className="transition group-hover:translate-x-2"
                   />
-                </button>
+                </button> */}
 
               </motion.div>
             );

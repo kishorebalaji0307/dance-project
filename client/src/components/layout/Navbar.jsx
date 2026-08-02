@@ -175,20 +175,18 @@ const Navbar = () => {
   hover:scale-105
   hover:drop-shadow-[0_0_20px_rgba(212,175,55,0.75)]"
 />
+<h1
+  className={`text-lg sm:text-xl lg:text-2xl font-bold tracking-wide transition ${
+    scrolled ? "text-white" : "text-white"
+  }`}
 
-            <h1
-              className={`text-3xl font-black tracking-wide transition ${
-                scrolled
-                  ? "text-white"
-                  : "text-white"
-              }`}
             >
               <span className="bg-gradient-to-r from-[#B8860B] via-[#D4AF37] to-[#F5D76E] bg-clip-text text-transparent">
                 5678
               </span>
 
               <span className="ml-2 text-white">
-                Studio
+                Dance & Fitness Studio
               </span>
             </h1>
           </Link>
