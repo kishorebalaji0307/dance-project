@@ -169,18 +169,15 @@ const Navbar = () => {
           <img
   src={logo}
   alt="5678 Dance & Fitness Studio Logo"
- className="h-20 w-auto object-contain
+ className="h-14 w-auto object-contain sm:h-16 lg:h-20
   drop-shadow-[0_0_12px_rgba(212,175,55,0.45)]
   transition-all duration-300
   hover:scale-105
   hover:drop-shadow-[0_0_20px_rgba(212,175,55,0.75)]"
 />
 <h1
-  className={`text-lg sm:text-xl lg:text-2xl font-bold tracking-wide transition ${
-    scrolled ? "text-white" : "text-white"
-  }`}
-
-            >
+  className={`hidden sm:block text-base sm:text-lg lg:text-2xl font-bold tracking-wide transition ${scrolled ? "text-white" : "text-white"}`}
+>
               <span className="bg-gradient-to-r from-[#B8860B] via-[#D4AF37] to-[#F5D76E] bg-clip-text text-transparent">
                 5678
               </span>

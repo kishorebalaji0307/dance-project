@@ -53,7 +53,7 @@ const WhyChooseUs = () => {
         <div className="absolute right-[10%] top-[20%] h-[400px] w-[400px] rounded-full bg-[#6B46C1]/3 blur-[150px] pointer-events-none" />
       </div>
 
-      <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
+      <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
 
         {/* Heading */}
 
@@ -68,14 +68,14 @@ const WhyChooseUs = () => {
             WHY CHOOSE US
           </span>
 
-          <h2 className="mt-8 text-5xl font-black text-white md:text-6xl">
+          <h2 className="mt-6 text-3xl font-black text-white sm:text-4xl md:text-5xl lg:text-6xl">
             More Than Just
             <span className="block bg-gradient-to-r from-[#8c6b00] via-[#D4AF37] to-[#f7dd7d] bg-clip-text text-transparent">
               A Dance Studio
             </span>
           </h2>
 
-          <p className="mx-auto mt-8 max-w-3xl text-lg leading-9 text-gray-400">
+          <p className="mx-auto mt-6 max-w-3xl text-sm leading-7 text-gray-400 sm:mt-8 sm:text-base sm:leading-8 lg:text-lg lg:leading-9">
             We inspire confidence, creativity and discipline through
             professional dance education in a positive learning environment.
           </p>
@@ -83,7 +83,7 @@ const WhyChooseUs = () => {
 
         {/* Cards */}
 
-        <div className="mt-24 grid gap-8 md:grid-cols-2 xl:grid-cols-4">
+        <div className="mt-16 grid gap-6 sm:gap-8 md:grid-cols-2 sm:mt-20 sm:mt-24 xl:grid-cols-4">
                     {features.map((feature, index) => {
             const Icon = feature.icon;
 
@@ -190,26 +190,26 @@ const WhyChooseUs = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: .8 }}
-          className="mt-24 rounded-[35px]
+          className="mt-16 sm:mt-24 rounded-[24px] sm:rounded-[35px]
           border border-[#D4AF37]/25
           bg-gradient-to-r
           from-[#0C0C0C]
           via-[#141217]
           to-[#0C0C0C]
-          p-12 text-center shadow-[0_15px_40px_rgba(0,0,0,0.5)]"
+          p-7 sm:p-12 text-center shadow-[0_15px_40px_rgba(0,0,0,0.5)]"
         >
           <p className="text-sm uppercase tracking-[0.35em] text-[#D4AF37]">
             OUR PROMISE
           </p>
 
-          <h3 className="mt-6 text-4xl font-black text-white">
+          <h3 className="mt-5 text-2xl font-black text-white sm:text-3xl md:text-4xl">
             Every Step Creates
             <span className="block text-[#D4AF37]">
               A Better Dancer
             </span>
           </h3>
 
-          <p className="mx-auto mt-8 max-w-3xl text-lg leading-9 text-gray-400">
+          <p className="mx-auto mt-6 max-w-3xl text-sm leading-7 text-gray-400 sm:text-base sm:leading-8 lg:text-lg lg:leading-9">
             Our mission is to help every student discover confidence,
             discipline and creativity through professional dance education,
             inspiring performances and unforgettable experiences.

@@ -17,7 +17,7 @@ const Team = () => {
         <div className="absolute right-[10%] bottom-[15%] h-[450px] w-[450px] rounded-full bg-[#6B46C1]/4 blur-[160px] pointer-events-none" />
       </div>
 
-      <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
+      <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
 
         {/* Heading */}
 
@@ -32,11 +32,11 @@ const Team = () => {
             The Faces of 5678
           </p>
 
-          <h2 className="mt-5 text-4xl md:text-6xl font-black text-white">
+          <h2 className="mt-5 text-3xl font-black text-white sm:text-4xl md:text-5xl lg:text-6xl">
             Meet Our Team
           </h2>
 
-          <p className="mx-auto mt-6 max-w-3xl text-lg leading-8 text-gray-400">
+          <p className="mx-auto mt-5 max-w-3xl text-sm leading-7 text-gray-400 sm:text-base sm:leading-8 lg:text-lg lg:leading-8">
             Behind every performance is a passionate team committed to
             inspiring confidence, creativity, discipline, and excellence
             through professional dance education.
@@ -58,13 +58,11 @@ const Team = () => {
 
             <div className="relative flex items-center justify-center p-10 lg:p-16">
 
-              {/* Gold Glow */}
+              {/* Gold Glow — hidden on very small screens */}
+              <div className="hidden sm:block absolute h-[280px] w-[280px] rounded-full bg-[#D4AF37]/20 blur-[80px] sm:h-[380px] sm:w-[380px] sm:blur-[120px]" />
 
-              <div className="absolute h-[430px] w-[430px] rounded-full bg-[#D4AF37]/20 blur-[120px]" />
-
-              {/* Circle */}
-
-              <div className="absolute h-[520px] w-[520px] rounded-full border border-[#D4AF37]/20" />
+              {/* Decorative Circle — hidden on mobile */}
+              <div className="hidden sm:block absolute h-[350px] w-[350px] rounded-full border border-[#D4AF37]/20 sm:h-[450px] sm:w-[450px] lg:h-[520px] lg:w-[520px]" />
 
               <motion.img
                 whileHover={{
@@ -75,20 +73,20 @@ const Team = () => {
                 }}
                 src={teamImage}
                 alt="5678 Team"
-                className="relative z-10 max-h-[650px] object-contain"
+                className="relative z-10 w-full max-w-[260px] object-contain sm:max-w-[380px] lg:max-h-[500px] lg:max-w-none"
               />
 
             </div>
 
             {/* Right Content */}
 
-            <div className="p-10 lg:p-16">
+            <div className="p-6 sm:p-10 lg:p-16">
 
               <p className="uppercase tracking-[0.35em] text-[#D4AF37]">
                 Our Instructors
               </p>
 
-              <h3 className="mt-5 text-5xl lg:text-6xl font-black text-white">
+              <h3 className="mt-4 text-3xl font-black text-white sm:mt-5 sm:text-4xl lg:text-5xl xl:text-6xl">
                 Janani
                 <span className="mx-4 text-[#D4AF37]">&</span>
                 Jowi
@@ -98,7 +96,7 @@ const Team = () => {
                 Lead Dance Instructors
               </p>
 
-              <p className="mt-8 text-lg leading-9 text-gray-400">
+              <p className="mt-6 text-sm leading-7 text-gray-400 sm:mt-8 sm:text-base sm:leading-8 lg:text-lg lg:leading-9">
                 With dedication, creativity, and years of dance experience,
                 Janani and Jowi inspire every student to grow with confidence.
                 Their goal is to create an energetic and welcoming environment

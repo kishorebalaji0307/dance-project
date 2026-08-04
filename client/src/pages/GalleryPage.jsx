@@ -102,7 +102,7 @@ const GalleryPage = () => {
           }}
         />
 
-        <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
+        <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           {/* Header Navigation */}
           <div className="mb-10">
             <Link
@@ -132,7 +132,7 @@ const GalleryPage = () => {
               initial={{ opacity: 0, y: 25 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.1 }}
-              className="mt-6 text-5xl font-black leading-tight text-white md:text-6xl"
+              className="mt-6 text-3xl font-black leading-tight text-white sm:text-4xl md:text-5xl lg:text-6xl"
             >
               Our{" "}
               <span className="bg-gradient-to-r from-[#B8860B] via-[#D4AF37] to-[#F5D76E] bg-clip-text text-transparent">
@@ -164,7 +164,7 @@ const GalleryPage = () => {
                 <img
                   src={featuredPhoto.src}
                   alt={featuredPhoto.title}
-                  className="h-[450px] w-full object-cover transition-transform duration-700 hover:scale-[1.02] md:h-[600px]"
+                  className="h-[220px] w-full object-cover transition-transform duration-700 hover:scale-[1.02] sm:h-[360px] md:h-[500px] lg:h-[600px] rounded-[20px] sm:rounded-[26px]"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black via-black/25 to-transparent" />
 
@@ -220,7 +220,7 @@ const GalleryPage = () => {
                       <img
                         src={item.src}
                         alt={item.title}
-                        className="h-[320px] w-full object-cover transition-transform duration-700 group-hover:scale-[1.03] md:h-[400px]"
+                        className="h-[220px] w-full object-cover transition-transform duration-700 group-hover:scale-[1.03] sm:h-[300px] md:h-[380px] lg:h-[400px]"
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent" />
                       

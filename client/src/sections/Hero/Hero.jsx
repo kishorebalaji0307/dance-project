@@ -7,7 +7,7 @@ const Hero = () => {
   return (
     <section
       id="home"
-      className="relative flex min-h-screen items-center justify-center overflow-hidden bg-[#050505] pt-32 pb-20 lg:py-0"
+      className="relative flex min-h-screen items-center justify-center overflow-hidden bg-[#050505] pt-24 pb-16 sm:pt-32 sm:pb-20 lg:py-0"
     >
       {/* Background Image Container */}
       <div className="absolute inset-0 z-0 select-none overflow-hidden pointer-events-none">
@@ -95,13 +95,13 @@ const Hero = () => {
               duration: 0.8,
               ease: [0.16, 1, 0.3, 1],
             }}
-            className="mt-10 flex flex-col gap-4 sm:flex-row sm:items-center justify-center"
+            className="mt-10 flex flex-col gap-4 sm:flex-row sm:items-center justify-center w-full sm:w-auto"
           >
             <a
               href="https://wa.me/918825385706?text=Hi%20I'm%20interested%20in%20joining%205678%20Dance%20Studio."
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center gap-3 rounded-full bg-gradient-to-r from-[#B8860B] via-[#D4AF37] to-[#F5D76E] px-8 py-4 font-semibold text-black shadow-[0_0_30px_rgba(212,175,55,.15)] transition-all duration-300 hover:scale-[1.03] active:scale-[0.98] hover:shadow-[0_0_45px_rgba(212,175,55,.45)] cursor-pointer"
+              className="inline-flex items-center justify-center gap-3 rounded-full bg-gradient-to-r from-[#B8860B] via-[#D4AF37] to-[#F5D76E] px-7 py-4 font-semibold text-black shadow-[0_0_30px_rgba(212,175,55,.15)] transition-all duration-300 hover:scale-[1.03] active:scale-[0.98] hover:shadow-[0_0_45px_rgba(212,175,55,.45)] cursor-pointer w-full sm:w-auto"
             >
               Enquire Now
               <ArrowRight size={18} />
@@ -109,7 +109,7 @@ const Hero = () => {
 
             <Link
               to="/classes"
-              className="inline-flex items-center justify-center gap-3 rounded-full border border-white/10 bg-white/[0.03] px-8 py-4 font-semibold text-white backdrop-blur-md transition-all duration-300 hover:border-[#D4AF37] hover:bg-[#D4AF37]/10 hover:scale-[1.03] active:scale-[0.98]"
+              className="inline-flex items-center justify-center gap-3 rounded-full border border-white/10 bg-white/[0.03] px-7 py-4 font-semibold text-white backdrop-blur-md transition-all duration-300 hover:border-[#D4AF37] hover:bg-[#D4AF37]/10 hover:scale-[1.03] active:scale-[0.98] w-full sm:w-auto"
             >
               <Play size={16} />
               Explore Classes

@@ -64,7 +64,7 @@ const Classes = () => {
 
       </div>
 
-      <div className="relative z-10 mx-auto max-w-7xl px-6 lg:px-8">
+      <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
 
         {/* Heading */}
 
@@ -80,7 +80,7 @@ const Classes = () => {
             OUR CLASSES
           </p>
 
-          <h2 className="mt-6 text-4xl font-black leading-tight text-white md:text-6xl">
+          <h2 className="mt-5 text-3xl font-black leading-tight text-white sm:text-4xl md:text-5xl lg:text-6xl">
 
             Discover Your
 
@@ -308,10 +308,11 @@ const Classes = () => {
             border
             border-[#D4AF37]/20
             bg-[#0F0F0F]/80
-            px-8
-            py-16
+            px-6
+            py-12
             text-center
             backdrop-blur-2xl
+            sm:px-8
             md:px-16
           "
           >
@@ -325,7 +326,7 @@ const Classes = () => {
                 START YOUR JOURNEY
               </p>
 
-              <h3 className="mt-6 text-4xl font-black text-white md:text-5xl">
+              <h3 className="mt-5 text-2xl font-black text-white sm:mt-6 sm:text-3xl md:text-4xl lg:text-5xl">
                 Ready To
 
                 <span className="block bg-gradient-to-r from-[#B8860B] via-[#D4AF37] to-[#FFE08A] bg-clip-text text-transparent">

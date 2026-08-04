@@ -63,7 +63,7 @@ const StudioPage = () => {
           }}
         />
 
-        <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
+        <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           {/* Header Navigation */}
           <div className="mb-10">
             <Link
@@ -93,7 +93,7 @@ const StudioPage = () => {
               initial={{ opacity: 0, y: 25 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.1 }}
-              className="mt-6 text-5xl font-black leading-tight text-white md:text-6xl"
+              className="mt-6 text-3xl font-black leading-tight text-white sm:text-4xl md:text-5xl lg:text-6xl"
             >
               Explore Our{" "}
               <span className="bg-gradient-to-r from-[#B8860B] via-[#D4AF37] to-[#F5D76E] bg-clip-text text-transparent">
@@ -125,7 +125,7 @@ const StudioPage = () => {
                 <img
                   src={studio1}
                   alt="Main Dance Studio Floor"
-                  className="h-[500px] w-full object-cover transition-transform duration-700 hover:scale-[1.03] md:h-[650px]"
+                  className="h-[220px] w-full object-cover transition-transform duration-700 hover:scale-[1.03] sm:h-[360px] md:h-[500px] lg:h-[650px]"
                 />
                 {/* Visual overlays for luxury feel */}
                 <div className="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-transparent" />
@@ -195,7 +195,7 @@ const StudioPage = () => {
                       <img
                         src={item.src}
                         alt={item.title}
-                        className="h-[300px] w-full object-cover transition-transform duration-700 group-hover:scale-[1.04] md:h-[380px]"
+                        className="h-[200px] w-full object-cover transition-transform duration-700 group-hover:scale-[1.04] sm:h-[270px] md:h-[340px] lg:h-[380px]"
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-black via-black/25 to-transparent" />
                       

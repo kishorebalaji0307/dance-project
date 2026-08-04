@@ -26,12 +26,12 @@ const Founder = () => {
         }}
       />
 
-      <div className="relative mx-auto grid max-w-7xl items-center gap-20 px-6 lg:grid-cols-2 lg:px-8">
+      <div className="relative mx-auto grid max-w-7xl items-center gap-12 px-4 sm:px-6 lg:gap-20 lg:grid-cols-2 lg:px-8">
 
         {/* Founder Image */}
 
         <motion.div
-          initial={{ opacity: 0, x: -70 }}
+          initial={{ opacity: 0, x: -20 }}
           whileInView={{ opacity: 1, x: 0 }}
           transition={{ duration: .8 }}
           viewport={{ once: true }}
@@ -45,8 +45,8 @@ const Founder = () => {
             <img
               src={founder}
               alt="Mrs. Chitra"
-              className="relative max-h-[700px] rounded-[30px] object-contain
-              drop-shadow-[0_25px_60px_rgba(212,175,55,.18)]"
+              className="relative w-full max-w-[320px] sm:max-w-[420px] lg:max-w-[500px] rounded-[24px] sm:rounded-[30px] object-contain
+              shadow-[0_20px_60px_rgba(212,175,55,0.18)] border border-[#D4AF37]/15"
             />
 
           </div>
@@ -56,7 +56,7 @@ const Founder = () => {
         {/* Content */}
 
         <motion.div
-          initial={{ opacity: 0, x: 70 }}
+          initial={{ opacity: 0, x: 20 }}
           whileInView={{ opacity: 1, x: 0 }}
           transition={{ duration: .8 }}
           viewport={{ once: true }}
@@ -66,7 +66,7 @@ const Founder = () => {
             The Heart Behind 5678
           </p>
 
-          <h2 className="mt-5 text-5xl font-black text-white md:text-6xl">
+          <h2 className="mt-4 text-4xl font-black text-white sm:text-5xl md:text-6xl">
             Mrs. Chitra
           </h2>
 
@@ -74,13 +74,13 @@ const Founder = () => {
             Founder & Lead Instructor
           </p>
 
-          <blockquote className="mt-10 border-l-2 border-[#D4AF37] pl-6 text-2xl italic leading-relaxed text-white">
+          <blockquote className="mt-7 sm:mt-10 border-l-2 border-[#D4AF37] pl-5 text-lg italic leading-relaxed text-white sm:pl-6 sm:text-2xl">
 
             "Every great dancer begins with one step..."
 
           </blockquote>
 
-          <p className="mt-8 text-lg leading-9 text-gray-400">
+          <p className="mt-6 text-base leading-8 text-gray-400 sm:mt-8 sm:text-lg sm:leading-9">
 
             At 5678 Dance & Fitness Studio, we believe dance is more than
             movement—it is confidence, discipline, creativity and self-expression.
@@ -90,7 +90,7 @@ const Founder = () => {
           </p>
                     {/* Stats */}
 
-          <div className="mt-12 grid gap-5 sm:grid-cols-2">
+          <div className="mt-8 grid gap-4 sm:mt-12 sm:grid-cols-2 sm:gap-5">
 
             <motion.div
               whileHover={{ y: -8 }}

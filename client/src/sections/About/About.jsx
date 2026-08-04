@@ -33,7 +33,7 @@ const About = () => {
       {/* Subtle deep indigo accent blur */}
       <div className="absolute left-1/3 top-1/2 h-[400px] w-[400px] rounded-full bg-[#6B46C1]/4 blur-[160px] pointer-events-none" />
 
-      <div className="mx-auto max-w-7xl px-6 lg:px-8">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
 
         {/* Heading */}
 
@@ -48,7 +48,7 @@ const About = () => {
             ABOUT THE STUDIO
           </p>
 
-          <h2 className="text-4xl lg:text-6xl font-black leading-tight text-white">
+          <h2 className="text-3xl sm:text-4xl lg:text-6xl font-black leading-tight text-white">
             Where Passion
             <br />
             Meets
@@ -67,13 +67,14 @@ const About = () => {
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
           transition={{ duration: .8 }}
-          className="relative mt-16 overflow-hidden rounded-[36px] border border-[#D4AF37]/20"
+          className="relative mt-10 sm:mt-16 overflow-hidden rounded-[20px] sm:rounded-[30px] md:rounded-[36px] border border-[#D4AF37]/20 shadow-[0_20px_60px_rgba(212,175,55,0.1)]"
         >
 
           <img
             src={aboutImg}
             alt="5678 Dance & Fitness Studio"
-            className="h-[520px] w-full object-cover transition duration-700 hover:scale-105"
+            className="h-[240px] w-full object-cover transition duration-700 hover:scale-[1.03] sm:h-[380px] md:h-[520px]"
+            style={{ objectPosition: "center" }}
           />
 
           {/* Overlay */}
@@ -82,13 +83,13 @@ const About = () => {
 
           {/* Floating Badge */}
 
-          <div className="absolute bottom-8 left-8 rounded-3xl border border-[#D4AF37]/20 bg-black/60 px-7 py-5 backdrop-blur-xl">
+          <div className="absolute bottom-4 left-4 rounded-2xl border border-[#D4AF37]/20 bg-black/70 px-4 py-3 backdrop-blur-xl sm:bottom-8 sm:left-8 sm:rounded-3xl sm:px-7 sm:py-5">
 
-            <h3 className="text-4xl font-black text-[#D4AF37]">
+            <h3 className="text-2xl font-black text-[#D4AF37] sm:text-4xl">
               5678
             </h3>
 
-            <p className="mt-1 text-gray-300">
+            <p className="mt-1 text-xs text-gray-300 sm:text-base">
               Dance • Fitness • Passion
             </p>
 
@@ -98,18 +99,18 @@ const About = () => {
 
         {/* Bottom Section */}
 
-        <div className="mt-16 grid gap-16 lg:grid-cols-2">
+        <div className="mt-10 sm:mt-16 grid gap-10 sm:gap-14 lg:gap-16 lg:grid-cols-2">
 
           {/* Left */}
 
           <motion.div
-            initial={{ opacity: 0, x: -50 }}
+            initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: .7 }}
           >
 
-            <p className="text-lg leading-9 text-gray-300">
+            <p className="text-base leading-8 text-gray-300 sm:text-lg sm:leading-9">
 
               <span className="font-semibold text-white">
                 5678 Dance & Fitness Studio
@@ -120,7 +121,7 @@ const About = () => {
 
             </p>
 
-            <p className="mt-6 text-lg leading-9 text-gray-400">
+            <p className="mt-5 text-base leading-8 text-gray-400 sm:text-lg sm:leading-9">
 
               From Bharatanatyam and Folk to Hip-Hop, Aerobics and
               Fitness, we nurture every learner with structured
@@ -134,7 +135,7 @@ const About = () => {
           {/* Right */}
 
           <motion.div
-            initial={{ opacity: 0, x: 50 }}
+            initial={{ opacity: 0, x: 20 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: .7 }}

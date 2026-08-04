@@ -30,16 +30,18 @@ const Map = () => {
 
           {/* Google Map */}
 
-          <div className="overflow-hidden rounded-3xl border border-[#D4AF37]/20">
+          <div className="overflow-hidden rounded-[20px] sm:rounded-[28px] md:rounded-3xl border border-[#D4AF37]/20 shadow-[0_15px_50px_rgba(212,175,55,0.08)]">
 
             <iframe
-              src="YOUR_GOOGLE_MAP_LINK"
+              src="https://www.google.com/maps?q=5678+Dance+%26+Fitness+Studio%2C+South+Car+Street%2C+Chidambaram%2C+Tamil+Nadu&output=embed"
               width="100%"
               height="500"
               loading="lazy"
               allowFullScreen
-              className="border-0"
-            ></iframe>
+              className="border-0 block"
+              style={{ minHeight: "280px" }}
+              title="5678 Dance Studio Location"
+            />
 
           </div>
 
@@ -78,8 +80,8 @@ const Map = () => {
                   Contact
                 </h3>
 
-                <p className="text-gray-400 mt-2">
-                  +91 XXXXX XXXXX
+                <p className="text-gray-400 mt-2 text-sm sm:text-base leading-7">
+                  +91 88253 85706
                 </p>
 
               </div>
@@ -107,10 +109,10 @@ const Map = () => {
             </div>
 
             <a
-              href="https://maps.google.com"
+              href="https://share.google/HNlnlzXzgAz8I6kaA"
               target="_blank"
               rel="noreferrer"
-              className="inline-flex mt-12 rounded-full bg-[#D4AF37] px-8 py-4 font-semibold text-black hover:scale-105 transition"
+              className="inline-flex mt-10 rounded-full bg-[#D4AF37] px-8 py-4 font-semibold text-black hover:scale-105 transition"
             >
               Get Directions
             </a>
