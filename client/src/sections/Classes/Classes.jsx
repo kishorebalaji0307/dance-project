@@ -11,10 +11,10 @@ import {
 const classes = [
   {
     icon: Music4,
-    title: "Hip Hop",
+    title: "Hip Hop Freestyle",
     age: "Age 3+",
     description:
-      "Energetic hip hop classes designed for kids and adults to build confidence, rhythm and stage performance.",
+      "Energetic hip hop training for juniors,Beginners, and intermediate & Advance level ,with professional dance battle opportunities.",
   },
   {
     icon: Flower2,
@@ -28,7 +28,7 @@ const classes = [
     title: "Aerobics",
     age: "Women Only",
     description:
-      "Fun and energetic aerobic sessions that improve strength, flexibility and overall fitness.",
+      "Fun and energetic aerobic sessions that improve strength, flexibility and overall fitness inculding diet management with beginner-friendly training from beginner to advance levels.",
   },
   {
     icon: Users,

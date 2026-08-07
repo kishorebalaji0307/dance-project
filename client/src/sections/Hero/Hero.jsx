@@ -59,10 +59,10 @@ const Hero = () => {
             }}
             className="mt-6 text-4xl font-extrabold leading-tight text-white sm:text-5xl md:text-6xl lg:text-7xl tracking-tight"
           >
-            Language
+            5678
             <br />
             <span className="bg-gradient-to-r from-[#B8860B] via-[#D4AF37] to-[#FFE08A] bg-clip-text text-transparent">
-              Of Soul
+             Dance & Fitness Studio
             </span>
           </motion.h1>
 
@@ -72,7 +72,7 @@ const Hero = () => {
             transition={{ delay: 0.35, duration: 0.8 }}
             className="mt-4 text-2xl font-light text-gray-200 sm:text-3xl"
           >
-            Dance & Fitness Studio
+            Language of solu
           </motion.h2>
 
           <motion.p
@@ -81,7 +81,7 @@ const Hero = () => {
             transition={{ delay: 0.5, duration: 0.8 }}
             className="mt-6 max-w-xl mx-auto text-base leading-relaxed text-gray-400 sm:text-lg sm:leading-8 text-center"
           >
-            Where passion meets performance. Learn Bharatanatyam, Hip Hop,
+            Where passion meets performance. Learn ,Freestyle Hip Hop,Bharatanatyam,
             Freestyle, Folk, and Fitness from professional instructors inside
             a premium learning environment.
           </motion.p>

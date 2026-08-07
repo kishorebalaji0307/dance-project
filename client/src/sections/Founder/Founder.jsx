@@ -71,7 +71,7 @@ const Founder = () => {
           </h2>
 
           <p className="mt-4 text-xl text-[#D4AF37]">
-            Founder & Lead Instructor
+            Founder of 5678 
           </p>
 
           <blockquote className="mt-7 sm:mt-10 border-l-2 border-[#D4AF37] pl-5 text-lg italic leading-relaxed text-white sm:pl-6 sm:text-2xl">
@@ -117,7 +117,7 @@ const Founder = () => {
             >
 
               <h3 className="text-4xl font-black text-white">
-                1+
+                4+
               </h3>
 
               <div className="mt-3 h-[2px] w-14 rounded-full bg-gradient-to-r from-[#B8860B] to-[#D4AF37]" />

@@ -47,7 +47,7 @@ const StudioShowcase = () => {
           <h2 className="mt-5 text-4xl font-black leading-tight text-white sm:text-5xl md:text-6xl">
             Designed For
             <span className="block bg-gradient-to-r from-[#B8860B] via-[#D4AF37] to-[#F5D76E] bg-clip-text text-transparent">
-              Performance
+              Every Dancer
             </span>
           </h2>
 
@@ -103,8 +103,8 @@ const StudioShowcase = () => {
               </h3>
 
               <p className="mt-6 max-w-lg leading-8 text-gray-300">
-                Our spacious dance floor, premium mirror setup, world-class
-                ambience and professional learning environment are thoughtfully
+                Our spacious dance floor, premium mirror setup
+              ,Fully Air-Conditioned studio and professional learning environment are thoughtfully
                 designed to help every student practice, perform and grow with
                 confidence.
               </p>

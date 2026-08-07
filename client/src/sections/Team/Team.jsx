@@ -86,19 +86,31 @@ const Team = () => {
                 Our Instructors
               </p>
 
-              <h3 className="mt-4 text-3xl font-black text-white sm:mt-5 sm:text-4xl lg:text-5xl xl:text-6xl">
-                Janani
-                <span className="mx-4 text-[#D4AF37]">&</span>
-                Jowi
-              </h3>
+              <div className="mt-6 flex flex-col gap-6 sm:flex-row sm:gap-10 sm:items-start lg:gap-12">
+                <div>
+                  <h3 className="text-2xl font-black text-white sm:text-3xl lg:text-4xl">
+                    Sri Janani
+                  </h3>
+                  <p className="mt-2 text-xs uppercase tracking-widest text-[#D4AF37] font-semibold sm:text-sm">
+                    Co-founder & Instructor
+                  </p>
+                </div>
 
-              <p className="mt-5 text-xl uppercase tracking-widest text-[#D4AF37]">
-                Lead Dance Instructors
-              </p>
+                <div className="hidden sm:block h-12 w-px bg-white/[0.08] self-center" />
+
+                <div>
+                  <h3 className="text-2xl font-black text-white sm:text-3xl lg:text-4xl">
+                    Jowi
+                  </h3>
+                  <p className="mt-2 text-xs uppercase tracking-widest text-[#D4AF37] font-semibold sm:text-sm">
+                    Instructor
+                  </p>
+                </div>
+              </div>
 
               <p className="mt-6 text-sm leading-7 text-gray-400 sm:mt-8 sm:text-base sm:leading-8 lg:text-lg lg:leading-9">
                 With dedication, creativity, and years of dance experience,
-                Janani and Jowi inspire every student to grow with confidence.
+                Sri Janani and Jowi inspire every student to grow with confidence.
                 Their goal is to create an energetic and welcoming environment
                 where every dancer discovers their true potential.
               </p>
@@ -109,9 +121,10 @@ const Team = () => {
 
                 {[
                   "Hip Hop",
+                  "Aerobics & Fitness",
                   "Bharatanatyam",
-                  "Fitness",
-                  "Performance",
+                  "Performance Training",
+                  "Events Choreography",
                 ].map((item) => (
 
                   <span
