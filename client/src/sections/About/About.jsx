@@ -4,72 +4,72 @@ import aboutImg from "../../assets/images/about.png";
 
 const features = [
   {
-    icon: <Award size={30} />,
+    icon: <Award size={24} strokeWidth={1.8} />,
     title: "Professional Training",
-    desc: "Expert mentors with structured learning.",
+    desc: "Expert mentors with structured learning programs.",
   },
   {
-    icon: <Users size={30} />,
+    icon: <Users size={24} strokeWidth={1.8} />,
     title: "All Age Groups",
-    desc: "Kids, Teens & Adults are welcome.",
+    desc: "Kids, Teens & Adults are warmly welcome.",
   },
   {
-    icon: <Dumbbell size={30} />,
+    icon: <Dumbbell size={24} strokeWidth={1.8} />,
     title: "Dance & Fitness",
-    desc: "Build confidence, fitness and creativity.",
+    desc: "Build confidence, fitness and creativity together.",
   },
 ];
 
 const About = () => {
   return (
-    <section
-      id="about"
-      className="relative overflow-hidden bg-gradient-to-b from-[#0A090D] via-[#0B0B0B] to-[#050505] py-28"
-    >
-      {/* Background Glow */}
-      <div className="absolute left-0 top-0 h-[350px] w-[350px] rounded-full bg-[#D4AF37]/5 blur-[150px]" />
-      <div className="absolute right-0 bottom-0 h-[350px] w-[350px] rounded-full bg-[#D4AF37]/5 blur-[150px]" />
-      
-      {/* Subtle deep indigo accent blur */}
-      <div className="absolute left-1/3 top-1/2 h-[400px] w-[400px] rounded-full bg-[#6B46C1]/4 blur-[160px] pointer-events-none" />
+    <section className="relative overflow-hidden bg-white py-20 sm:py-24 lg:py-28">
+      {/* Subtle Gold Glow */}
+      <div className="pointer-events-none absolute right-0 top-0 h-[500px] w-[500px] rounded-full bg-[#D4AF37]/5 blur-[180px]" />
 
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-
-        {/* Heading */}
-
+      <div className="mx-auto max-w-7xl px-5 sm:px-8 lg:px-10">
+        {/* ================= SECTION HEADER ================= */}
         <motion.div
-          initial={{ opacity: 0, y: 40 }}
+          initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: .7 }}
+          transition={{ duration: 0.7 }}
           className="max-w-3xl"
         >
-          <p className="mb-4 uppercase tracking-[0.35em] text-[#D4AF37] text-sm font-semibold">
-            ABOUT THE STUDIO
-          </p>
+          {/* Section Label */}
+          <div className="mb-5 flex items-center gap-3">
+            <div className="h-px w-8 bg-[#D4AF37]" />
 
-          <h2 className="text-3xl sm:text-4xl lg:text-6xl font-black leading-tight text-white">
+            <p className="text-xs font-bold uppercase tracking-[0.35em] text-[#B8860B]">
+              About The Studio
+            </p>
+          </div>
+
+          {/* Main Heading */}
+          <h2 className="text-4xl font-black leading-[1.05] tracking-[-0.025em] text-gray-950 sm:text-5xl lg:text-6xl">
             Where Passion
             <br />
-            Meets
-            <span className="text-[#D4AF37]">
-              {" "}Excellence.
+            Meets{" "}
+            <span className="bg-gradient-to-r from-[#B8860B] via-[#D4AF37] to-[#F5D76E] bg-clip-text text-transparent">
+              Excellence.
             </span>
           </h2>
 
-          <div className="mt-7 h-[3px] w-24 rounded-full bg-[#D4AF37]" />
+          {/* Gold Accent */}
+          <div className="mt-7 h-[3px] w-16 rounded-full bg-gradient-to-r from-[#B8860B] via-[#D4AF37] to-transparent" />
         </motion.div>
 
-        {/* IMAGE */}
-
+        {/* ================= IMAGE ================= */}
         <motion.div
-          initial={{ opacity: 0, scale: .96 }}
+          initial={{ opacity: 0, scale: 0.97 }}
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
-          transition={{ duration: .8 }}
-          className="relative mt-10 sm:mt-16 overflow-hidden rounded-[20px] sm:rounded-[30px] md:rounded-[36px] border border-[#D4AF37]/20 shadow-[0_20px_60px_rgba(212,175,55,0.1)]"
+          transition={{ duration: 0.8 }}
+          className="relative mt-12 overflow-hidden rounded-[24px] border border-black/[0.06] bg-black shadow-[0_20px_60px_rgba(0,0,0,0.12)] sm:mt-16 sm:rounded-[32px]"
         >
+          {/* Gold Top Border */}
+          <div className="absolute left-0 right-0 top-0 z-10 h-[3px] bg-gradient-to-r from-[#B8860B] via-[#D4AF37] to-transparent" />
 
+          {/* Image */}
           <img
             src={aboutImg}
             alt="5678 Dance & Fitness Studio"
@@ -77,104 +77,85 @@ const About = () => {
             style={{ objectPosition: "center" }}
           />
 
-          {/* Overlay */}
+          {/* Image Overlay */}
+          <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent" />
 
-          <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-black/10 to-transparent"></div>
+          {/* ================= FLOATING BADGE ================= */}
+          <div className="absolute bottom-5 left-5 sm:bottom-8 sm:left-8">
+            <div className="rounded-2xl border border-[#D4AF37]/50 bg-black/75 px-5 py-4 shadow-[0_8px_30px_rgba(212,175,55,0.18)] backdrop-blur-xl sm:rounded-3xl sm:px-7 sm:py-5">
+              <h3 className="text-3xl font-black text-[#D4AF37] sm:text-4xl">
+                5678
+              </h3>
 
-          {/* Floating Badge */}
-
-          <div className="absolute bottom-4 left-4 rounded-2xl border border-[#D4AF37]/20 bg-black/70 px-4 py-3 backdrop-blur-xl sm:bottom-8 sm:left-8 sm:rounded-3xl sm:px-7 sm:py-5">
-
-            <h3 className="text-2xl font-black text-[#D4AF37] sm:text-4xl">
-              5678
-            </h3>
-
-            <p className="mt-1 text-xs text-gray-300 sm:text-base">
-              Dance • Fitness • Passion
-            </p>
-
+              <p className="mt-1 text-xs font-semibold uppercase tracking-[0.18em] text-white/90 sm:text-sm">
+                Dance • Fitness • Passion
+              </p>
+            </div>
           </div>
-
         </motion.div>
 
-        {/* Bottom Section */}
-
-        <div className="mt-10 sm:mt-16 grid gap-10 sm:gap-14 lg:gap-16 lg:grid-cols-2">
-
-          {/* Left */}
-
+        {/* ================= BOTTOM CONTENT ================= */}
+        <div className="mt-14 grid gap-12 sm:mt-20 lg:grid-cols-2 lg:gap-20">
+          {/* ================= LEFT — TEXT ================= */}
           <motion.div
-            initial={{ opacity: 0, x: -20 }}
+            initial={{ opacity: 0, x: -25 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: .7 }}
+            transition={{ duration: 0.7 }}
           >
-
-            <p className="text-base leading-8 text-gray-300 sm:text-lg sm:leading-9">
-
-              <span className="font-semibold text-white">
+            <p className="text-[15px] font-medium leading-[1.9] text-gray-600 sm:text-lg">
+              <span className="font-bold text-gray-950">
                 5678 Dance & Fitness Studio
               </span>{" "}
-              is one of Chidambaram's premier dance academies where
-              students discover confidence, discipline and creativity
-              through professional dance and fitness training.
-
+              is one of Chidambaram's premier dance academies where students
+              discover confidence, discipline and creativity through
+              professional dance and fitness training.
             </p>
 
-            <p className="mt-5 text-base leading-8 text-gray-400 sm:text-lg sm:leading-9">
-
-              From Bharatanatyam and Folk to Hip-Hop, Aerobics and
-              Fitness, we nurture every learner with structured
-              guidance in a positive, energetic and inspiring
-              environment.
-
+            <p className="mt-6 text-[15px] font-medium leading-[1.9] text-gray-500 sm:text-lg">
+              From Bharatanatyam and Folk to Hip-Hop, Aerobics and Fitness, we
+              nurture every learner with structured guidance in a positive,
+              energetic environment.
             </p>
-
           </motion.div>
 
-          {/* Right */}
-
+          {/* ================= RIGHT — FEATURE CARDS ================= */}
           <motion.div
-            initial={{ opacity: 0, x: 20 }}
+            initial={{ opacity: 0, x: 25 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: .7 }}
-            className="grid gap-6 sm:grid-cols-3 lg:grid-cols-1"
+            transition={{ duration: 0.7 }}
+            className="grid gap-4 sm:grid-cols-3 lg:grid-cols-1"
           >
-
-            {features.map((item, index) => (
-
-              <div
-                key={index}
-                className="flex items-center gap-5 rounded-3xl border border-white/[0.08] bg-white/[0.02] p-6 backdrop-blur-md transition-all duration-300 hover:border-[#D4AF37]/50 hover:bg-[#D4AF37]/5 hover:scale-[1.02] shadow-[0_8px_32px_rgba(0,0,0,0.3)] hover:shadow-[0_15px_40px_rgba(212,175,55,0.08)] cursor-default"
+            {features.map((item, i) => (
+              <motion.div
+                key={i}
+                whileHover={{ y: -4 }}
+                transition={{ duration: 0.25 }}
+                className="group relative flex items-center gap-5 overflow-hidden rounded-2xl border border-gray-100 bg-white p-5 shadow-[0_4px_18px_rgba(0,0,0,0.05)] transition-all duration-300 hover:border-[#D4AF37]/40 hover:shadow-[0_10px_30px_rgba(180,140,20,0.12)] sm:p-6"
               >
+                {/* Gold Accent */}
+                <div className="absolute bottom-0 left-0 top-0 w-[3px] bg-gradient-to-b from-[#B8860B] via-[#D4AF37] to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
 
-                <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-[#D4AF37]/10 text-[#D4AF37]">
-
+                {/* Icon */}
+                <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl border border-[#D4AF37]/20 bg-[#FFF9E6] text-[#B8860B] transition-all duration-300 group-hover:border-[#D4AF37] group-hover:bg-[#D4AF37] group-hover:text-white group-hover:shadow-[0_5px_18px_rgba(212,175,55,0.3)]">
                   {item.icon}
-
                 </div>
 
-                <div>
-
-                  <h3 className="font-bold text-white">
+                {/* Content */}
+                <div className="min-w-0">
+                  <h3 className="text-sm font-bold tracking-tight text-gray-950 sm:text-base">
                     {item.title}
                   </h3>
 
-                  <p className="mt-1 text-sm text-gray-400">
+                  <p className="mt-1 text-sm font-medium leading-relaxed text-gray-500">
                     {item.desc}
                   </p>
-
                 </div>
-
-              </div>
-
+              </motion.div>
             ))}
-
           </motion.div>
-
         </div>
-
       </div>
     </section>
   );

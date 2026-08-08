@@ -14,195 +14,106 @@ const RegisterPage = () => {
   const [showPassword, setShowPassword] = useState(false);
   const [formError, setFormError] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
-
   const { register, user, error, clearError } = useAuth();
   const navigate = useNavigate();
 
-  // If already logged in, redirect to dashboard
-  useEffect(() => {
-    if (user) {
-      navigate("/dashboard", { replace: true });
-    }
-  }, [user, navigate]);
-
-  // Clear global auth errors on page load/unload
-  useEffect(() => {
-    clearError();
-    return () => clearError();
-  }, []);
+  useEffect(() => { if (user) navigate("/dashboard", { replace: true }); }, [user, navigate]);
+  useEffect(() => { clearError(); return () => clearError(); }, []);
 
   const handleSubmit = async (e) => {
-    e.preventDefault();
-    setFormError("");
-
-    // Input Validation
-    if (!username || !email || !password) {
-      setFormError("Please fill in all fields");
-      return;
-    }
-
-    if (username.length < 3) {
-      setFormError("Username must be at least 3 characters");
-      return;
-    }
-
-    if (password.length < 6) {
-      setFormError("Password must be at least 6 characters");
-      return;
-    }
-
+    e.preventDefault(); setFormError("");
+    if (!username || !email || !password) { setFormError("Please fill in all fields"); return; }
+    if (username.length < 3) { setFormError("Username must be at least 3 characters"); return; }
+    if (password.length < 6) { setFormError("Password must be at least 6 characters"); return; }
     setIsSubmitting(true);
     const result = await register(username, email, password);
     setIsSubmitting(false);
-
-    if (!result.success) {
-      setFormError(result.error);
-    }
+    if (!result.success) setFormError(result.error);
   };
+
+  const inputBase = "w-full rounded-full border border-gray-200 bg-white py-4 pl-12 pr-5 text-gray-900 placeholder-gray-300 outline-none transition duration-300 focus:border-[#C9A227] focus:shadow-[0_0_0_3px_rgba(180,140,20,0.12)] text-sm shadow-[0_2px_8px_rgba(0,0,0,0.04)]";
 
   return (
     <>
       <Navbar />
-      <div className="relative flex min-h-screen items-center justify-center overflow-hidden bg-[#050505] pt-28 pb-16 px-4">
-        {/* Decorative Golden Background Glows */}
-        <div className="absolute inset-0 pointer-events-none">
-          <div className="absolute left-1/2 top-1/2 h-[500px] w-[500px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#D4AF37]/5 blur-[120px]" />
-          <div className="absolute left-[-10%] top-[10%] h-[300px] w-[300px] rounded-full bg-[#D4AF37]/3 blur-[120px]" />
-          <div className="absolute right-[-10%] bottom-[10%] h-[300px] w-[300px] rounded-full bg-[#D4AF37]/3 blur-[120px]" />
-        </div>
+      <div className="relative flex min-h-screen items-center justify-center overflow-hidden bg-[#FAF8F3] pt-28 pb-20 px-4">
 
-        {/* Auth Form Card */}
+        <div className="absolute left-1/2 top-1/2 h-[500px] w-[500px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#C9A227]/6 blur-[150px] pointer-events-none" />
+        <div className="absolute right-[-10%] bottom-[5%] h-[300px] w-[300px] rounded-full bg-[#C9A227]/4 blur-[120px] pointer-events-none" />
+
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 35 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-          className="relative z-10 w-full max-w-md overflow-hidden rounded-[30px] border border-[#D4AF37]/20 bg-[#0B0B0B]/85 p-8 shadow-[0_20px_50px_rgba(0,0,0,0.5)] backdrop-blur-xl sm:p-10"
+          transition={{ duration: 0.65, ease: [0.16, 1, 0.3, 1] }}
+          className="relative z-10 w-full max-w-md overflow-hidden rounded-[32px] border border-gray-100 bg-white p-8 shadow-[0_25px_70px_rgba(0,0,0,0.09)] sm:p-10"
         >
-          {/* Logo / Header */}
-          <div className="flex flex-col items-center justify-center text-center">
-            <img
-              src={logo}
-              alt="5678 Dance & Fitness Studio"
-              className="h-20 w-auto object-contain drop-shadow-[0_0_8px_rgba(212,175,55,0.3)]"
-            />
-            <h2 className="mt-4 text-3xl font-black text-white">
+          <div className="absolute top-0 left-0 right-0 h-[3px] bg-gradient-to-r from-[#8B6914] via-[#C9A227] to-[#E8C94A]" />
+
+          <div className="flex flex-col items-center text-center">
+            <img src={logo} alt="5678 Dance Studio" className="h-20 w-auto object-contain" />
+            <h2 className="mt-5 text-3xl font-extrabold tracking-[-0.02em] text-gray-950">
               Create{" "}
-              <span className="bg-gradient-to-r from-[#B8860B] via-[#D4AF37] to-[#F5D76E] bg-clip-text text-transparent">
-                Account
-              </span>
+              <span className="bg-gradient-to-r from-[#8B6914] via-[#C9A227] to-[#E8C94A] bg-clip-text text-transparent">Account</span>
             </h2>
-            <p className="mt-2 text-sm text-gray-400">
-              Join the premium 5678 Dance Studio
-            </p>
+            <p className="mt-2 text-sm text-gray-400">Join the premium 5678 Dance Studio</p>
           </div>
 
-          {/* Form */}
-          <form className="mt-8 space-y-5" onSubmit={handleSubmit}>
-            {/* Error Message */}
+          <div className="my-7 h-px bg-gray-100" />
+
+          <form className="space-y-5" onSubmit={handleSubmit}>
             {(formError || error) && (
               <motion.div
                 initial={{ opacity: 0, y: -10 }}
                 animate={{ opacity: 1, y: 0 }}
-                className="flex items-center gap-3 rounded-xl border border-red-500/20 bg-red-500/10 p-4 text-sm text-red-400"
+                className="flex items-center gap-3 rounded-2xl border border-red-100 bg-red-50 p-4 text-sm text-red-500"
               >
-                <AlertCircle size={18} className="flex-shrink-0" />
+                <AlertCircle size={17} className="flex-shrink-0" />
                 <p>{formError || error}</p>
               </motion.div>
             )}
 
-            {/* Username Field */}
-            <div className="space-y-2">
-              <label className="text-xs font-semibold uppercase tracking-wider text-[#D4AF37]">
-                Username
-              </label>
-              <div className="relative flex items-center">
-                <span className="absolute left-4 text-gray-400">
-                  <User size={18} />
-                </span>
-                <input
-                  type="text"
-                  required
-                  value={username}
-                  onChange={(e) => setUsername(e.target.value)}
-                  placeholder="john_doe"
-                  className="w-full rounded-full border border-white/[0.08] bg-white/[0.03] py-4 pl-12 pr-4 text-white placeholder-gray-500 outline-none transition duration-300 focus:border-[#D4AF37]/50 focus:bg-[#D4AF37]/5"
-                />
+            {[
+              { label: "Username", type: "text", value: username, set: setUsername, icon: User, placeholder: "john_doe" },
+              { label: "Email Address", type: "email", value: email, set: setEmail, icon: Mail, placeholder: "name@example.com" },
+            ].map(({ label, type, value, set, icon: Icon, placeholder }) => (
+              <div className="space-y-2" key={label}>
+                <label className="text-xs font-bold uppercase tracking-[0.28em] text-gray-500">{label}</label>
+                <div className="relative flex items-center">
+                  <span className="absolute left-4 text-gray-300"><Icon size={17} /></span>
+                  <input type={type} required value={value} onChange={(e) => set(e.target.value)} placeholder={placeholder} className={inputBase} />
+                </div>
               </div>
-            </div>
+            ))}
 
-            {/* Email Field */}
             <div className="space-y-2">
-              <label className="text-xs font-semibold uppercase tracking-wider text-[#D4AF37]">
-                Email Address
-              </label>
+              <label className="text-xs font-bold uppercase tracking-[0.28em] text-gray-500">Password</label>
               <div className="relative flex items-center">
-                <span className="absolute left-4 text-gray-400">
-                  <Mail size={18} />
-                </span>
-                <input
-                  type="email"
-                  required
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  placeholder="name@example.com"
-                  className="w-full rounded-full border border-white/[0.08] bg-white/[0.03] py-4 pl-12 pr-4 text-white placeholder-gray-500 outline-none transition duration-300 focus:border-[#D4AF37]/50 focus:bg-[#D4AF37]/5"
+                <span className="absolute left-4 text-gray-300"><Lock size={17} /></span>
+                <input type={showPassword ? "text" : "password"} required value={password} onChange={(e) => setPassword(e.target.value)} placeholder="••••••••"
+                  className="w-full rounded-full border border-gray-200 bg-white py-4 pl-12 pr-14 text-gray-900 placeholder-gray-300 outline-none transition duration-300 focus:border-[#C9A227] focus:shadow-[0_0_0_3px_rgba(180,140,20,0.12)] text-sm shadow-[0_2px_8px_rgba(0,0,0,0.04)]"
                 />
-              </div>
-            </div>
-
-            {/* Password Field */}
-            <div className="space-y-2">
-              <label className="text-xs font-semibold uppercase tracking-wider text-[#D4AF37]">
-                Password
-              </label>
-              <div className="relative flex items-center">
-                <span className="absolute left-4 text-gray-400">
-                  <Lock size={18} />
-                </span>
-                <input
-                  type={showPassword ? "text" : "password"}
-                  required
-                  value={password}
-                  onChange={(e) => setPassword(e.target.value)}
-                  placeholder="••••••••"
-                  className="w-full rounded-full border border-white/[0.08] bg-white/[0.03] py-4 pl-12 pr-12 text-white placeholder-gray-500 outline-none transition duration-300 focus:border-[#D4AF37]/50 focus:bg-[#D4AF37]/5"
-                />
-                <button
-                  type="button"
-                  onClick={() => setShowPassword(!showPassword)}
-                  className="absolute right-4 text-gray-400 hover:text-white transition"
-                >
-                  {showPassword ? <EyeOff size={18} /> : <Eye size={18} />}
+                <button type="button" onClick={() => setShowPassword(!showPassword)} className="absolute right-4 text-gray-300 hover:text-[#C9A227] transition-colors">
+                  {showPassword ? <EyeOff size={17} /> : <Eye size={17} />}
                 </button>
               </div>
             </div>
 
-            {/* Submit Button */}
             <button
               type="submit"
               disabled={isSubmitting}
-              className="flex w-full items-center justify-center gap-3 rounded-full bg-gradient-to-r from-[#B8860B] via-[#D4AF37] to-[#F5D76E] py-4 font-semibold text-black shadow-[0_0_20px_rgba(212,175,55,0.15)] transition duration-300 hover:scale-[1.02] hover:shadow-[0_0_30px_rgba(212,175,55,0.3)] disabled:opacity-50"
+              className="flex w-full items-center justify-center gap-3 rounded-full bg-gradient-to-r from-[#8B6914] via-[#C9A227] to-[#E8C94A] py-4 font-bold text-black shadow-[0_6px_25px_rgba(180,140,20,0.25)] transition duration-300 hover:scale-[1.02] hover:shadow-[0_10px_35px_rgba(180,140,20,0.40)] disabled:opacity-50 disabled:cursor-not-allowed mt-2"
             >
               {isSubmitting ? (
-                <div className="h-5 w-5 animate-spin rounded-full border-2 border-black border-t-transparent"></div>
+                <div className="h-5 w-5 animate-spin rounded-full border-2 border-black border-t-transparent" />
               ) : (
-                <>
-                  Register
-                  <ArrowRight size={18} />
-                </>
+                <><span>Register</span><ArrowRight size={17} /></>
               )}
             </button>
           </form>
 
-          {/* Toggle Login */}
-          <div className="mt-8 text-center text-sm text-gray-400">
+          <div className="mt-7 text-center text-sm text-gray-400">
             Already have an account?{" "}
-            <Link
-              to="/login"
-              className="font-semibold text-[#D4AF37] hover:underline"
-            >
-              Sign In
-            </Link>
+            <Link to="/login" className="font-bold text-[#C9A227] hover:text-[#8B6914] transition-colors">Sign In</Link>
           </div>
         </motion.div>
       </div>

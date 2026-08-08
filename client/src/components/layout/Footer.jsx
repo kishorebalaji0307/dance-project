@@ -1,234 +1,127 @@
-import {
-  Phone,
-  MapPin,
-  Clock,
-  Heart,
-  ChevronRight,
-} from "lucide-react";
-
+import { Phone, MapPin, Clock, ChevronRight } from "lucide-react";
 import { FaInstagram } from "react-icons/fa";
+import logo from "../../assets/images/5678logo.png";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
-    <footer className="relative overflow-hidden bg-[#050505] text-gray-300">
+    <footer className="relative overflow-hidden bg-[#0A0A0A] text-gray-400">
 
-      {/* Gold Background Glow */}
+      {/* Gold atmospheric glows */}
+      <div className="absolute -left-32 bottom-0 h-[350px] w-[350px] rounded-full bg-[#C9A227]/8 blur-[160px] pointer-events-none" />
+      <div className="absolute -right-32 top-0 h-[350px] w-[350px] rounded-full bg-[#C9A227]/6 blur-[160px] pointer-events-none" />
 
-      <div className="absolute inset-0 overflow-hidden">
+      {/* Top gold divider */}
+      <div className="h-[3px] w-full bg-gradient-to-r from-transparent via-[#C9A227] to-transparent opacity-50" />
 
-        <div className="absolute -left-32 top-0 h-80 w-80 rounded-full bg-[#D4AF37]/10 blur-[140px]" />
-
-        <div className="absolute -right-32 bottom-0 h-80 w-80 rounded-full bg-[#D4AF37]/10 blur-[140px]" />
-
-      </div>
-
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14 sm:py-20">
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20">
 
         <div className="grid gap-14 md:grid-cols-2 lg:grid-cols-4">
 
-          {/* Studio Info */}
-
+          {/* Brand */}
           <div>
-
-            <h2 className="text-4xl font-black tracking-wide">
-
-              <span className="bg-gradient-to-r from-[#8f6b00] via-[#D4AF37] to-[#F7DD7D] bg-clip-text text-transparent">
-                5678
-              </span>
-
-              <span className="ml-2 text-white">
-                Studio
-              </span>
-
+            <img src={logo} alt="5678 Dance Studio" className="h-12 w-auto object-contain mb-4 drop-shadow-[0_0_8px_rgba(180,140,20,0.30)]" />
+            <h2 className="text-3xl font-extrabold tracking-[-0.02em] text-white">
+              <span className="bg-gradient-to-r from-[#8B6914] via-[#C9A227] to-[#E8C94A] bg-clip-text text-transparent">5678</span>
+              <span className="ml-2">Studio</span>
             </h2>
-
-            <div className="mt-5 h-[2px] w-20 rounded-full bg-[#D4AF37]" />
-
-            <p className="mt-6 leading-8 text-gray-500">
-
-              Inspiring every student through dance,
-              discipline, creativity and fitness.
-
-              Join our vibrant family and express yourself
-              through movement.
-
+            <div className="mt-4 h-[2px] w-12 rounded-full bg-gradient-to-r from-[#B8860B] to-[#C9A227]" />
+            <p className="mt-5 leading-[2] text-gray-500 text-sm">
+              Inspiring every student through dance, discipline, creativity and fitness.
+              Join our vibrant family and express yourself through movement.
             </p>
-
           </div>
 
           {/* Quick Links */}
-
           <div>
-
-            <h3 className="text-xl font-bold text-white">
-              Quick Links
-            </h3>
-
-            <div className="mt-3 h-[2px] w-12 rounded-full bg-[#D4AF37]" />
-
-            <ul className="mt-8 space-y-4">
-
+            <h3 className="text-sm font-bold uppercase tracking-[0.20em] text-white">Quick Links</h3>
+            <div className="mt-3 h-[2px] w-8 rounded-full bg-gradient-to-r from-[#B8860B] to-[#C9A227]" />
+            <ul className="mt-7 space-y-3">
               {[
-                "Home",
-                "About",
-                "Classes",
-                "Gallery",
-                "Achievements",
-                "Contact",
+                { label: "Home", to: "/" },
+                { label: "About", href: "#about" },
+                { label: "Classes", to: "/classes" },
+                { label: "Gallery", to: "/gallery" },
+                { label: "Contact", to: "/contact" },
               ].map((item) => (
-
-                <li key={item}>
-
-                  <a
-                    href={`#${item.toLowerCase()}`}
-                    className="group flex items-center gap-3 text-gray-400 transition hover:text-[#D4AF37]"
-                  >
-
-                    <ChevronRight
-                      size={16}
-                      className="transition group-hover:translate-x-1"
-                    />
-
-                    {item}
-
-                  </a>
-
+                <li key={item.label}>
+                  {item.to ? (
+                    <Link to={item.to} className="group flex items-center gap-2.5 text-sm text-gray-500 hover:text-[#C9A227] transition-all duration-300">
+                      <ChevronRight size={14} className="text-[#C9A227]/40 group-hover:text-[#C9A227] transition-transform group-hover:translate-x-1 duration-300" />
+                      {item.label}
+                    </Link>
+                  ) : (
+                    <a href={item.href} className="group flex items-center gap-2.5 text-sm text-gray-500 hover:text-[#C9A227] transition-all duration-300">
+                      <ChevronRight size={14} className="text-[#C9A227]/40 group-hover:text-[#C9A227] transition-transform group-hover:translate-x-1 duration-300" />
+                      {item.label}
+                    </a>
+                  )}
                 </li>
-
               ))}
-
             </ul>
-
           </div>
-                    {/* Contact */}
 
+          {/* Contact */}
           <div>
-
-            <h3 className="text-xl font-bold text-white">
-              Contact
-            </h3>
-
-            <div className="mt-3 h-[2px] w-12 rounded-full bg-[#D4AF37]" />
-
-            <div className="mt-8 space-y-6">
-
-              <div className="flex items-start gap-4">
-
-                <div className="flex h-11 w-11 items-center justify-center rounded-full border border-[#D4AF37]/30 bg-[#D4AF37]/10">
-                  <Phone size={18} className="text-[#D4AF37]" />
+            <h3 className="text-sm font-bold uppercase tracking-[0.20em] text-white">Contact</h3>
+            <div className="mt-3 h-[2px] w-8 rounded-full bg-gradient-to-r from-[#B8860B] to-[#C9A227]" />
+            <div className="mt-7 space-y-6">
+              {[
+                { Icon: Phone, label: "Phone", content: "+91 88253 85706" },
+                {
+                  Icon: MapPin, label: "Location",
+                  content: <span className="leading-[2]">No.51, South Car Street,<br />Opp. Natural Salon,<br />Chidambaram.</span>
+                },
+                { Icon: Clock, label: "Hours", content: "Mon – Sun : 6:00 AM – 9:00 PM" },
+              ].map(({ Icon, label, content }, i) => (
+                <div key={i} className="flex items-start gap-4">
+                  <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-[#C9A227]/20 bg-[#C9A227]/8">
+                    <Icon size={15} className="text-[#C9A227]" />
+                  </div>
+                  <div>
+                    <p className="text-xs font-bold uppercase tracking-widest text-gray-600">{label}</p>
+                    <p className="mt-1.5 text-sm text-gray-300">{content}</p>
+                  </div>
                 </div>
-
-                <div>
-                  <p className="text-sm text-gray-500">Phone</p>
-                  <p className="mt-1 text-white">
-                    +91 88253 85706
-                  </p>
-                </div>
-
-              </div>
-
-              <div className="flex items-start gap-4">
-
-                <div className="flex h-11 w-11 items-center justify-center rounded-full border border-[#D4AF37]/30 bg-[#D4AF37]/10">
-                  <MapPin size={18} className="text-[#D4AF37]" />
-                </div>
-
-                <div>
-                  <p className="text-sm text-gray-500">Location</p>
-
-                  <p className="mt-1 leading-7 text-white">
-                    No.51, South Car Street,
-                    <br />
-                    Opp. Natural Salon,
-                    <br />
-                    Chidambaram.
-                  </p>
-                </div>
-
-              </div>
-
-              <div className="flex items-start gap-4">
-
-                <div className="flex h-11 w-11 items-center justify-center rounded-full border border-[#D4AF37]/30 bg-[#D4AF37]/10">
-                  <Clock size={18} className="text-[#D4AF37]" />
-                </div>
-
-                <div>
-                  <p className="text-sm text-gray-500">Working Hours</p>
-
-                  <p className="mt-1 text-white">
-                    Mon – Sun : 6:00 AM – 9:00 PM
-                  </p>
-                </div>
-
-              </div>
-
+              ))}
             </div>
-
           </div>
 
           {/* Social */}
-
           <div>
-
-            <h3 className="text-xl font-bold text-white">
-              Follow Us
-            </h3>
-
-            <div className="mt-3 h-[2px] w-12 rounded-full bg-[#D4AF37]" />
-
+            <h3 className="text-sm font-bold uppercase tracking-[0.20em] text-white">Follow Us</h3>
+            <div className="mt-3 h-[2px] w-8 rounded-full bg-gradient-to-r from-[#B8860B] to-[#C9A227]" />
             <a
               href="https://www.instagram.com/5_6_7_8_soulofdance"
               target="_blank"
               rel="noreferrer"
-              className="mt-8 inline-flex items-center gap-3 rounded-full bg-[#D4AF37] px-7 py-4 font-semibold text-black transition-all duration-300 hover:scale-105 hover:bg-[#e8c75d] shadow-[0_10px_30px_rgba(212,175,55,.35)]"
+              className="mt-8 inline-flex items-center gap-3 rounded-full bg-gradient-to-r from-[#8B6914] via-[#C9A227] to-[#E8C94A] px-7 py-3.5 font-bold text-black text-sm transition-all duration-300 hover:scale-105 hover:shadow-[0_8px_28px_rgba(180,140,20,0.40)]"
             >
-              <FaInstagram size={22} />
+              <FaInstagram size={17} />
               Follow on Instagram
             </a>
-
-            <p className="mt-8 leading-8 text-gray-500">
-              Stay connected for class updates,
-              performances, competitions,
-              workshops and exciting dance events.
+            <p className="mt-7 text-sm leading-[2] text-gray-500">
+              Stay connected for class updates, performances, competitions, workshops and exciting dance events.
             </p>
-
           </div>
 
         </div>
 
-        {/* Bottom */}
-
-        <div className="mt-20 border-t border-[#D4AF37]/20 pt-8">
-
+        {/* Bottom Bar */}
+        <div className="mt-16 pt-8 border-t border-[#C9A227]/12">
           <div className="flex flex-col items-center justify-between gap-5 md:flex-row">
-
-            <p className="text-center text-sm text-gray-500 md:text-left">
-              © {new Date().getFullYear()} 5678 Dance & Fitness Studio.
-              All Rights Reserved.
+            <p className="text-xs text-gray-600 tracking-wide">
+              © {new Date().getFullYear()} 5678 Dance & Fitness Studio. All Rights Reserved.
             </p>
-
-            {/* <p className="flex items-center gap-2 text-sm text-gray-500">
-
-              Designed with
-
-              <Heart
-                size={16}
-                className="fill-[#D4AF37] text-[#D4AF37]"
-              /> */}
-
-              {/* <span className="font-semibold text-[#D4AF37]">
-                by Kishore Balaji
-              </span> */}
-
-            {/* </p> */}
-
+            <div className="flex items-center gap-4">
+              <div className="h-px w-16 bg-gradient-to-r from-transparent to-[#C9A227]/25" />
+              <span className="text-[#C9A227]/35 text-xs font-bold">5678</span>
+              <div className="h-px w-16 bg-gradient-to-l from-transparent to-[#C9A227]/25" />
+            </div>
           </div>
-
         </div>
 
       </div>
-
     </footer>
   );
 };
