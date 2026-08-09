@@ -6,10 +6,10 @@ const Contact = () => {
   const mapSrc = "https://www.google.com/maps?q=5678+Dance+%26+Fitness+Studio%2C+South+Car+Street%2C+Chidambaram%2C+Tamil+Nadu&output=embed";
 
   const items = [
-    { Icon: MapPin, title: "Address", content: <p className="text-gray-400 mt-2 text-sm sm:text-base leading-[2]">5678 Dance &amp; Fitness Studio<br />No.51, South Car Street,<br />Opp. Natural Salon,<br />Chidambaram, Tamil Nadu</p> },
-    { Icon: Phone, title: "Phone", content: <a href="tel:+918825385706" className="text-gray-400 mt-2 text-sm block hover:text-[#C9A227] transition-colors">+91 88253 85706</a> },
-    { Icon: Mail, title: "Email", content: <a href="mailto:info@5678dance.com" className="text-gray-400 mt-2 text-sm block hover:text-[#C9A227] transition-colors">info@5678dance.com</a> },
-    { Icon: Clock, title: "Working Hours", content: <p className="text-gray-400 mt-2 text-sm leading-[2]">Monday – Sunday<br />6:00 AM – 9:00 PM</p> },
+    { Icon: MapPin, title: "Address", content: <p className="text-gray-800 font-medium mt-2 text-sm sm:text-base leading-[2]">5678 Dance &amp; Fitness Studio<br />No.51, South Car Street,<br />Opp. Natural Salon,<br />Chidambaram, Tamil Nadu</p> },
+    { Icon: Phone, title: "Phone", content: <a href="tel:+918825385706" className="text-gray-800 font-medium mt-2 text-sm sm:text-base block hover:text-[#C9A227] transition-colors">+91 88253 85706</a> },
+    { Icon: Mail, title: "Email", content: <a href="mailto:info@5678dance.com" className="text-gray-800 font-medium mt-2 text-sm sm:text-base block hover:text-[#C9A227] transition-colors">info@5678dance.com</a> },
+    { Icon: Clock, title: "Working Hours", content: <p className="text-gray-800 font-medium mt-2 text-sm sm:text-base leading-[2]">Monday – Sunday<br />6:00 AM – 9:00 PM</p> },
   ];
 
   return (
@@ -33,7 +33,7 @@ const Contact = () => {
               <span className="bg-gradient-to-r from-[#8B6914] via-[#C9A227] to-[#E8C94A] bg-clip-text text-transparent">Connect</span>
             </h1>
             <div className="mx-auto mt-7 h-[3px] w-16 rounded-full bg-gradient-to-r from-[#B8860B] to-[#C9A227]" />
-            <p className="mt-5 text-gray-400 max-w-2xl mx-auto text-sm sm:text-base leading-[2]">
+            <p className="mt-5 text-gray-800 font-medium max-w-2xl mx-auto text-base sm:text-lg leading-[2]">
               We'd love to welcome you to 5678 Dance &amp; Fitness Studio.
             </p>
           </div>

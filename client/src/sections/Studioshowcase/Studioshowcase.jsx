@@ -76,20 +76,20 @@ const StudioShowcase = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.3, duration: 0.8 }}
-            className="hidden lg:flex absolute inset-y-0 left-0 w-[56%] items-end bg-gradient-to-r from-black/90 via-black/65 to-transparent px-14 pb-14"
+            className="hidden lg:flex absolute inset-y-0 left-0 w-[58%] items-end bg-gradient-to-r from-black/95 via-black/80 to-transparent px-14 pb-14"
           >
             <div className="max-w-lg">
               <div className="flex items-center gap-3 mb-5">
-                <div className="h-px w-6 bg-[#C9A227] opacity-70" />
-                <p className="text-xs font-bold uppercase tracking-[0.40em] text-[#C9A227]">Premium Experience</p>
+                <div className="h-px w-6 bg-[#F5D76E]" />
+                <p className="text-xs font-bold uppercase tracking-[0.40em] text-[#F5D76E]">Premium Experience</p>
               </div>
-              <h3 className="text-5xl font-extrabold leading-[1.1] tracking-[-0.03em] text-white">
-                Step Into
-                <span className="block bg-gradient-to-r from-[#B8860B] via-[#C9A227] to-[#F5D76E] bg-clip-text text-transparent">
+              <h3 className="text-5xl font-extrabold leading-[1.1] tracking-[-0.03em] text-white drop-shadow-[0_2px_8px_rgba(0,0,0,0.9)]">
+                Step Into{" "}
+                <span className="block bg-gradient-to-r from-[#F5D76E] via-[#FFD700] to-[#FFF8E1] bg-clip-text text-transparent">
                   Excellence
                 </span>
               </h3>
-              <p className="mt-6 max-w-md leading-[1.9] text-gray-200 text-[0.9375rem]">
+              <p className="mt-6 max-w-md text-white text-base sm:text-lg font-medium leading-[1.85] tracking-wide drop-shadow-[0_2px_6px_rgba(0,0,0,0.95)]">
                 Our spacious dance floor, premium mirror setup, fully Air-Conditioned studio
                 and professional learning environment are thoughtfully designed to help every
                 student practice, perform and grow with confidence.
@@ -97,8 +97,8 @@ const StudioShowcase = () => {
               <div className="mt-8 space-y-3">
                 {features.map((f) => (
                   <div key={f} className="flex items-center gap-4">
-                    <CheckCircle2 size={17} className="text-[#C9A227] shrink-0" />
-                    <span className="text-gray-100 text-sm">{f}</span>
+                    <CheckCircle2 size={18} className="text-[#F5D76E] shrink-0 drop-shadow-[0_1px_4px_rgba(0,0,0,0.9)]" />
+                    <span className="text-white font-bold text-sm sm:text-base tracking-wide drop-shadow-[0_1px_4px_rgba(0,0,0,0.9)]">{f}</span>
                   </div>
                 ))}
               </div>

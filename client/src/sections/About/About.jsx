@@ -81,7 +81,7 @@ const About = () => {
           <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent" />
 
           {/* ================= FLOATING BADGE ================= */}
-          <div className="absolute bottom-5 left-5 sm:bottom-8 sm:left-8">
+          {/* <div className="absolute bottom-5 left-5 sm:bottom-8 sm:left-8">
             <div className="rounded-2xl border border-[#D4AF37]/50 bg-black/75 px-5 py-4 shadow-[0_8px_30px_rgba(212,175,55,0.18)] backdrop-blur-xl sm:rounded-3xl sm:px-7 sm:py-5">
               <h3 className="text-3xl font-black text-[#D4AF37] sm:text-4xl">
                 5678
@@ -91,7 +91,7 @@ const About = () => {
                 Dance • Fitness • Passion
               </p>
             </div>
-          </div>
+          </div> */}
         </motion.div>
 
         {/* ================= BOTTOM CONTENT ================= */}

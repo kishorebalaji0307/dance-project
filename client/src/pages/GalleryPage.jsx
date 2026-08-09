@@ -56,7 +56,7 @@ const GalleryPage = () => {
 
             <div className="mx-auto mt-7 h-[3px] w-16 rounded-full bg-gradient-to-r from-[#B8860B] to-[#C9A227]" />
 
-            <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 1, delay: 0.2 }} className="mx-auto mt-6 max-w-3xl text-base leading-[2] text-gray-400 sm:text-lg">
+            <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 1, delay: 0.2 }} className="mx-auto mt-6 max-w-3xl text-base leading-[2] text-gray-800 font-medium sm:text-[1.125rem]">
               A visual journey of our celebrations, stage shows, practice sessions, and the wonderful dance community we build together.
             </motion.p>
           </div>
@@ -79,11 +79,11 @@ const GalleryPage = () => {
                       <featured.icon className="text-[#C9A227] shrink-0" size={24} />
                       <span className="bg-gradient-to-r from-[#8B6914] via-[#C9A227] to-[#E8C94A] bg-clip-text text-transparent">{featured.title}</span>
                     </h2>
-                    <p className="mt-3 max-w-2xl text-gray-400 leading-[2] text-sm sm:text-base">{featured.desc}</p>
+                    <p className="mt-3 max-w-2xl text-gray-700 font-medium leading-[2] text-sm sm:text-base">{featured.desc}</p>
                   </div>
                   <div className="flex flex-wrap gap-2 shrink-0">
-                    <span className="rounded-full bg-gray-50 border border-gray-200 px-4 py-2 text-xs font-medium text-gray-500">Synchronized Choreography</span>
-                    <span className="rounded-full bg-[#FFF8E1] border border-[#C9A227]/25 px-4 py-2 text-xs font-medium text-[#8B6914]">Live Performance</span>
+                    <span className="rounded-full bg-gray-50 border border-gray-200 px-4 py-2 text-xs font-bold text-gray-700">Synchronized Choreography</span>
+                    <span className="rounded-full bg-[#FFF8E1] border border-[#C9A227]/25 px-4 py-2 text-xs font-bold text-[#8B6914]">Live Performance</span>
                   </div>
                 </div>
               </div>
@@ -113,7 +113,7 @@ const GalleryPage = () => {
                   </div>
                   <div className="p-5">
                     <h4 className="text-lg font-bold text-gray-900 group-hover:text-[#8B6914] transition-colors sm:text-xl">{item.title}</h4>
-                    <p className="mt-2 text-sm text-gray-400 leading-[1.85]">{item.desc}</p>
+                    <p className="mt-2 text-sm text-gray-700 font-medium leading-[1.85]">{item.desc}</p>
                   </div>
                 </motion.div>
               );

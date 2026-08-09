@@ -24,7 +24,7 @@ const Navbar = () => {
   ];
 
   const navLink =
-    "group relative text-[11px] font-bold uppercase tracking-[0.14em] text-gray-700 hover:text-[#C9A227] transition-all duration-300";
+    "group relative text-[12.5px] font-extrabold uppercase tracking-[0.14em] text-gray-900 hover:text-[#C9A227] transition-all duration-300";
   const underline =
     "absolute -bottom-[3px] left-0 h-[2px] w-0 rounded-full bg-gradient-to-r from-[#B8860B] to-[#D4AF37] transition-all duration-300 group-hover:w-full";
 
@@ -82,18 +82,23 @@ const Navbar = () => {
         <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-6 lg:px-8">
 
           {/* Logo */}
-          <Link to="/" className="flex items-center gap-3">
+          <Link to="/" className="flex items-center gap-2.5 sm:gap-3 shrink-0 min-w-0">
             <img
               src={logo}
               alt="5678 Dance & Fitness Studio Logo"
-              className="h-14 w-auto object-contain sm:h-16 lg:h-20 transition-all duration-300 hover:scale-105"
+              className="h-10 w-auto object-contain sm:h-16 lg:h-20 transition-all duration-300 hover:scale-105"
             />
-            <span className="hidden sm:block text-base sm:text-lg font-extrabold tracking-[-0.02em]">
-              <span className="bg-gradient-to-r from-[#B8860B] via-[#C9A227] to-[#E8C94A] bg-clip-text text-transparent">
-                5678
+            <div className="flex flex-col justify-center leading-tight">
+              <span className="text-[13px] sm:text-base lg:text-lg font-extrabold tracking-[-0.02em] whitespace-nowrap">
+                <span className="bg-gradient-to-r from-[#B8860B] via-[#C9A227] to-[#E8C94A] bg-clip-text text-transparent">
+                  5678
+                </span>
+                <span className="ml-1.5 text-gray-900">Dance &amp; Fitness</span>
               </span>
-              <span className="ml-2 text-gray-900">Dance & Fitness</span>
-            </span>
+              <span className="text-[9.5px] sm:text-[11px] font-extrabold uppercase tracking-[0.20em] text-[#B8860B]">
+                Studio
+              </span>
+            </div>
           </Link>
 
           {/* Desktop Nav */}

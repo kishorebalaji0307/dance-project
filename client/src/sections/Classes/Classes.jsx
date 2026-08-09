@@ -57,7 +57,7 @@ const Classes = () => {
 
           <div className="mx-auto mt-7 h-[3px] w-16 rounded-full bg-gradient-to-r from-[#B8860B] to-[#C9A227]" />
 
-          <p className="mx-auto mt-8 max-w-3xl text-base leading-[2] text-gray-500 sm:text-lg">
+          <p className="mx-auto mt-8 max-w-3xl text-base leading-[2] text-gray-800 font-medium sm:text-[1.125rem]">
             From graceful classical performances to energetic hip hop, fitness and freestyle, explore
             professionally designed programs that inspire confidence, creativity and lifelong passion for dance.
           </p>
@@ -95,12 +95,12 @@ const Classes = () => {
                   </h3>
 
                   {/* Age badge */}
-                  <div className="mt-4 inline-flex w-fit rounded-full border border-[#C9A227]/25 bg-[#FFF8E1] px-4 py-1.5 text-sm font-semibold text-[#8B6914]">
+                  <div className="mt-4 inline-flex w-fit rounded-full border border-[#C9A227]/25 bg-[#FFF8E1] px-4 py-1.5 text-sm font-bold text-[#8B6914]">
                     {item.age}
                   </div>
 
                   {/* Description */}
-                  <p className="mt-6 flex-grow leading-[2] text-gray-400 text-[0.9375rem]">
+                  <p className="mt-6 flex-grow leading-[2] text-gray-700 font-medium text-[0.975rem]">
                     {item.description}
                   </p>
 
@@ -148,7 +148,7 @@ const Classes = () => {
               </span>
             </h3>
 
-            <p className="mx-auto mt-7 max-w-2xl text-base leading-[2] text-gray-600 sm:text-lg">
+            <p className="mx-auto mt-7 max-w-2xl text-base leading-[2] text-gray-800 font-medium sm:text-[1.125rem]">
               Whether you're taking your very first step or looking to master your skills,
               our experienced instructors are here to guide you with passion and creativity.
             </p>
