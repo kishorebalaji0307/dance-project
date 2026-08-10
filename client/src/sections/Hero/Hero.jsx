@@ -21,20 +21,6 @@ const Hero = () => {
       {/* Content — Neatly Centered */}
       <div className="relative z-10 mx-auto flex flex-col items-center justify-center text-center max-w-4xl px-6 lg:px-8">
 
-        {/* Eyebrow Tag */}
-        <motion.div
-          initial={{ opacity: 0, y: 15 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
-          className="inline-flex items-center justify-center gap-3 mb-6"
-        >
-          <div className="h-px w-8 bg-[#C9A227] opacity-60" />
-          <span className="uppercase tracking-[0.45em] text-[#C9A227] text-xs font-bold">
-            Language of soul
-          </span>
-          <div className="h-px w-8 bg-[#C9A227] opacity-60" />
-        </motion.div>
-
         {/* Main Headline */}
         <motion.h1
           initial={{ opacity: 0, y: 30 }}
@@ -48,6 +34,20 @@ const Hero = () => {
           <br />
           Dance &amp; Fitness Studio
         </motion.h1>
+
+        {/* Tagline — Directly Below Studio Name */}
+        <motion.div
+          initial={{ opacity: 0, y: 15 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.25, duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
+          className="inline-flex items-center justify-center gap-3 mt-4 sm:mt-5"
+        >
+          <div className="h-px w-8 sm:w-12 bg-gradient-to-r from-transparent to-[#C9A227]/50" />
+          <span className="uppercase tracking-[0.45em] text-[11px] sm:text-xs font-semibold text-[#B8860B]">
+            Language of Soul
+          </span>
+          <div className="h-px w-8 sm:w-12 bg-gradient-to-l from-transparent to-[#C9A227]/50" />
+        </motion.div>
 
         {/* Centered Gold Accent Line */}
         <motion.div
@@ -65,7 +65,7 @@ const Hero = () => {
           className="mt-7 max-w-2xl text-base leading-[1.95] text-gray-500 sm:text-lg sm:leading-[2]"
         >
           Where passion meets performance. Learn Freestyle Hip Hop, Bharatanatyam,
-          Freestyle, Folk, and Fitness from professional instructors inside
+          Aerobic, and Fitness from professional instructors inside
           a premium learning environment.
         </motion.p>
 

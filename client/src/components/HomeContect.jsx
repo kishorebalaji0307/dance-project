@@ -97,7 +97,8 @@ const HomeContact = () => {
                 Icon: Clock, label: "Working Hours",
                 content: (
                   <p className="text-gray-400 mt-2 text-sm leading-[2]">
-                    Monday – Sunday<br />6:00 AM – 9:00 PM
+                    Monday – Saturday<br />4:30 PM– 8:30 PM <br/>
+                     Sunday<br/>9:00 AM – 1:00 PM
                   </p>
                 ),
               },

@@ -48,6 +48,8 @@ app.use(
 app.use(express.json());
 app.use(cookieParser());
 
+const path = require("path");
+
 // Mount Routes
 app.use("/api/auth", authRoutes);
 
@@ -55,6 +57,16 @@ app.use("/api/auth", authRoutes);
 app.get("/api/health", (req, res) => {
   res.status(200).json({ status: "OK", message: "Server is running smoothly" });
 });
+
+// Serve static client production build if present
+const clientDistPath = path.join(__dirname, "../client/dist");
+if (require("fs").existsSync(clientDistPath)) {
+  app.use(express.static(clientDistPath));
+  app.get("*", (req, res, next) => {
+    if (req.path.startsWith("/api/")) return next();
+    res.sendFile(path.join(clientDistPath, "index.html"));
+  });
+}
 
 // Global Error Handler
 app.use((err, req, res, next) => {
