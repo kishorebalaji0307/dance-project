@@ -1,5 +1,6 @@
 import Navbar from "../components/layout/Navbar";
 import Hero from "../sections/Hero/Hero";
+import Marquee from "../components/Marquee";
 import About from "../sections/About/About";
 import Footer from "../components/layout/Footer";
 import WhyChooseUs from "../sections/WhyChooseUs/WhyChooseus";
@@ -14,6 +15,7 @@ function Home() {
     <>
       <Navbar />
       <Hero />
+      <Marquee />
       <StudioShowcase />
       <About />
       <Founder />

@@ -11,7 +11,7 @@ import studio5 from "../assets/images/studio-5.jpg";
 
 const StudioPage = () => {
   const galleryItems = [
-    { id: "hiphop-wall", src: studio2, title: "Hip Hop Zone", desc: "Our creative wall featuring vibrant graffiti art that inspires energy and self-expression.", icon: Sparkles },
+    { id: "hiphop-wall", src: studio2, title: "Hip Hop Zone", desc: "Our creative wall featuring vibrant graffiti art that inspires energy and self-expression.", icon: Sparkles, objectPosition: "50% 36.5%" },
     { id: "welcome-sign", src: studio3, title: "Welcome Foyer", desc: "The entrance to 5678 Studio, welcoming you to the language of the soul.", icon: Info },
     { id: "photo-wall", src: studio4, title: "Hall of Fame", desc: "A display of memories, achievements, and the journey of our dance community.", icon: Award },
     { id: "reception", src: studio5, title: "Reception Desk", desc: "Our front desk, ready to assist you with class schedules, registrations, and inquiries.", icon: Heart },
@@ -115,7 +115,12 @@ const StudioPage = () => {
                   >
                     <div className="absolute top-0 left-0 right-0 h-[3px] z-10 bg-gradient-to-r from-[#8B6914] via-[#C9A227] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-400" />
                     <div className="relative overflow-hidden rounded-[16px] sm:rounded-[20px]">
-                      <img src={item.src} alt={item.title} className="h-[200px] w-full object-cover transition-transform duration-700 group-hover:scale-[1.04] sm:h-[270px] md:h-[340px]" />
+                      <img
+                        src={item.src}
+                        alt={item.title}
+                        className="h-[200px] w-full object-cover transition-transform duration-700 group-hover:scale-[1.04] sm:h-[270px] md:h-[340px]"
+                        style={{ objectPosition: item.objectPosition || "center" }}
+                      />
                       <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-black/10 to-transparent" />
                       <div className="absolute right-4 top-4 flex h-10 w-10 items-center justify-center rounded-full border border-white/20 bg-black/65 text-white backdrop-blur-md">
                         <Icon size={16} />

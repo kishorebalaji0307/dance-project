@@ -354,3 +354,25 @@
    DEFAULT LINK
    ============================================================ */
 a { color: inherit; text-decoration: none; }
+
+/* ============================================================
+   INFINITE MARQUEE ANIMATION
+   ============================================================ */
+@keyframes marquee-scroll {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee-slow {
+  display: flex;
+  width: max-content;
+  animation: marquee-scroll 35s linear infinite;
+}
+
+.animate-marquee-slow:hover {
+  animation-play-state: paused;
+}

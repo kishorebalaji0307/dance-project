@@ -159,7 +159,7 @@ const Classes = () => {
               rel="noopener noreferrer"
               className="mt-12 inline-flex items-center gap-3 rounded-full bg-gradient-to-r from-[#8B6914] via-[#C9A227] to-[#E8C94A] px-10 py-4 font-bold text-black shadow-[0_6px_25px_rgba(180,140,20,0.30)] transition-all duration-400 hover:scale-105 hover:shadow-[0_10px_40px_rgba(180,140,20,0.45)]"
             >
-              Book Your Free Trial
+              Book Your Trial
               <ArrowRight size={20} />
             </a>
           </div>

@@ -113,7 +113,7 @@ const About = () => {
             </p>
 
             <p className="mt-6 text-[15px] font-medium leading-[1.9] text-gray-500 sm:text-lg">
-              From Bharatanatyam and Folk to Hip-Hop, Aerobics and Fitness, we
+              From  Hip-Hop Freestyle to Bharatanatyam, Aerobics and Fitness, we
               nurture every learner with structured guidance in a positive,
               energetic environment.
             </p>
