@@ -72,7 +72,8 @@ const Footer = () => {
                   Icon: MapPin, label: "Location",
                   content: <span className="leading-[2]">No.51, South Car Street,<br />Opp. Natural Salon,<br />Chidambaram.</span>
                 },
-                { Icon: Clock, label: "Hours", content: "Mon – Sun : 6:00 AM – 9:00 PM" },
+                { Icon: Clock, label: "Hours", content: <span className="leading-[2]">Monday – Saturday<br />4:30 PM– 8:30 PM <br/>
+                     Sunday<br/>9:00 AM – 1:00 PM</span> },
               ].map(({ Icon, label, content }, i) => (
                 <div key={i} className="flex items-start gap-4">
                   <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-[#C9A227]/20 bg-[#C9A227]/8">

@@ -36,8 +36,7 @@ const Marquee = () => {
                     item.highlight
                       ? "bg-gradient-to-r from-[#FFF0B3] via-[#F5D76E] to-[#D4AF37] bg-clip-text text-transparent drop-shadow-[0_0_12px_rgba(245,215,110,0.3)]"
                       : "text-gray-300 hover:text-white transition-colors"
-                  }`}
-                >
+                  }`}>
                   {item.text}
                 </span>
                 <span className="text-[#D4AF37]/50 text-xs ml-4 sm:ml-6">❖</span>
