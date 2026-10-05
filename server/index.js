@@ -26,8 +26,13 @@ mongoose
     process.exit(1);
   });
 
-// Middlewares
+// Trust reverse proxy (Render / Cloudflare / Vercel)
+app.set("trust proxy", 1);
+
+// Allowed origins
 const allowedOrigins = [
+  "https://www.5678dancestudio.in",
+  "https://5678dancestudio.in",
   "http://localhost:5173",
   "http://localhost:5174",
   "http://localhost:5175",
@@ -38,34 +43,44 @@ if (process.env.CLIENT_URL) {
   allowedOrigins.push(...envOrigins);
 }
 
-app.use(
-  cors({
-    origin: (origin, callback) => {
-      // Allow requests with no origin (like mobile apps or server-to-server requests)
-      if (!origin) return callback(null, true);
+const isOriginAllowed = (origin) => {
+  // Allow requests with no origin (like mobile apps, curl, or server-to-server requests)
+  if (!origin) return true;
 
-      // Check if origin is explicitly in allowedOrigins
-      if (allowedOrigins.includes(origin)) {
-        return callback(null, true);
-      }
+  // Check if origin is explicitly in allowedOrigins list
+  if (allowedOrigins.includes(origin)) return true;
 
-      // Check if origin is any Vercel domain (*.vercel.app)
-      if (/\.vercel\.app$/.test(origin)) {
-        return callback(null, true);
-      }
+  // Check if origin matches 5678dancestudio.in or any subdomain
+  if (/https?:\/\/(.+\.)?5678dancestudio\.in$/.test(origin)) return true;
 
-      // Check if origin is localhost or 127.0.0.1 on any port
-      if (/^http:\/\/(localhost|127\.0\.0\.1)(:\d+)?$/.test(origin)) {
-        return callback(null, true);
-      }
+  // Check if origin is any Vercel domain (*.vercel.app)
+  if (/https?:\/\/(.+\.)?vercel\.app$/.test(origin)) return true;
 
-      callback(null, false);
-    },
-    credentials: true,
-    methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
-    allowedHeaders: ["Content-Type", "Authorization"],
-  })
-);
+  // Check if origin is any Render domain (*.onrender.com)
+  if (/https?:\/\/(.+\.)?onrender\.com$/.test(origin)) return true;
+
+  // Check if origin is localhost or 127.0.0.1 on any port
+  if (/^http:\/\/(localhost|127\.0\.0\.1)(:\d+)?$/.test(origin)) return true;
+
+  return false;
+};
+
+const corsOptions = {
+  origin: (origin, callback) => {
+    if (isOriginAllowed(origin)) {
+      return callback(null, true);
+    }
+    console.warn(`[CORS] Request blocked from origin: ${origin}`);
+    callback(null, false);
+  },
+  credentials: true,
+  methods: ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
+  allowedHeaders: ["Content-Type", "Authorization", "X-Requested-With", "Accept"],
+  optionsSuccessStatus: 200,
+};
+
+app.use(cors(corsOptions));
+app.options("*", cors(corsOptions));
 app.use(express.json());
 app.use(cookieParser());
 
