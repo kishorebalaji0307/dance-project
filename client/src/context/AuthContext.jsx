@@ -20,21 +20,22 @@ export const AuthProvider = ({ children }) => {
   useEffect(() => {
     const checkAuth = async () => {
       try {
+        const token = localStorage.getItem("token");
+        const headers = { "Content-Type": "application/json" };
+        if (token) headers["Authorization"] = `Bearer ${token}`;
+
         const res = await fetch(`${API_URL}/api/auth/me`, {
           method: "GET",
-          headers: {
-            "Content-Type": "application/json",
-          },
+          headers,
           credentials: "include",
         });
         const data = await res.json();
         if (data.success) {
-          setUser(data.user);
+          setUser(data.user); // user object includes role from /api/auth/me
         } else {
           setUser(null);
         }
       } catch (err) {
-        console.error("Auth check failed:", err);
         setUser(null);
       } finally {
         setLoading(false);
@@ -58,6 +59,7 @@ export const AuthProvider = ({ children }) => {
       });
       const data = await res.json();
       if (data.success) {
+        if (data.token) localStorage.setItem("token", data.token);
         setUser(data.user);
         return { success: true };
       } else {
@@ -87,6 +89,7 @@ export const AuthProvider = ({ children }) => {
       });
       const data = await res.json();
       if (data.success) {
+        if (data.token) localStorage.setItem("token", data.token);
         setUser(data.user);
         return { success: true };
       } else {
@@ -105,23 +108,28 @@ export const AuthProvider = ({ children }) => {
   const logout = async () => {
     setLoading(true);
     try {
+      const token = localStorage.getItem("token");
+      const headers = { "Content-Type": "application/json" };
+      if (token) headers["Authorization"] = `Bearer ${token}`;
+
       const res = await fetch(`${API_URL}/api/auth/logout`, {
         method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
+        headers,
         credentials: "include",
       });
+      localStorage.removeItem("token");
       const data = await res.json();
       if (data.success) {
         setUser(null);
         return { success: true };
       } else {
+        setUser(null);
         return { success: false, error: data.message || "Logout failed" };
       }
     } catch (err) {
-      console.error("Logout failed:", err);
-      return { success: false, error: "An unexpected error occurred. Please try again." };
+      localStorage.removeItem("token");
+      setUser(null);
+      return { success: true };
     } finally {
       setLoading(false);
     }

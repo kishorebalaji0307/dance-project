@@ -63,7 +63,7 @@ const StudioShowcase = () => {
           <img
             src={studioImage}
             alt="5678 Dance & Fitness Studio"
-            className="h-[260px] w-full object-cover transition duration-700 hover:scale-[1.03] sm:h-[380px] md:h-[520px] lg:h-[720px]"
+            className="w-full h-auto aspect-[4/3] sm:aspect-[16/10] lg:aspect-[16/9] max-h-[720px] object-cover transition duration-700 hover:scale-[1.02]"
           />
 
           {/* Luxury Overlay */}

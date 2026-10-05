@@ -106,6 +106,7 @@ exports.getMe = async (req, res) => {
         id: req.user._id,
         username: req.user.username,
         email: req.user.email,
+        role: req.user.role,
       },
     });
   } catch (error) {
@@ -132,10 +133,12 @@ const sendTokenResponse = (user, statusCode, res) => {
     .cookie("token", token, options)
     .json({
       success: true,
+      token,
       user: {
         id: user._id,
         username: user.username,
         email: user.email,
+        role: user.role,
       },
     });
 };

@@ -1,10 +1,18 @@
+require("dotenv").config();
 const express = require("express");
 const mongoose = require("mongoose");
 const cors = require("cors");
 const cookieParser = require("cookie-parser");
-require("dotenv").config();
 
 const authRoutes = require("./routes/authRoutes");
+const eventRoutes = require("./routes/eventRoutes");
+const { apiRateLimiter } = require("./middleware/rateLimiter");
+
+// Safe Cloudinary environment check
+console.log("Environment configuration check:");
+console.log("  CLOUDINARY_CLOUD_NAME:", process.env.CLOUDINARY_CLOUD_NAME ? "configured" : "missing");
+console.log("  CLOUDINARY_API_KEY:", process.env.CLOUDINARY_API_KEY ? "configured" : "missing");
+console.log("  CLOUDINARY_API_SECRET:", process.env.CLOUDINARY_API_SECRET ? "configured" : "missing");
 
 const app = express();
 const PORT = process.env.PORT || 5000;
@@ -33,12 +41,25 @@ if (process.env.CLIENT_URL) {
 app.use(
   cors({
     origin: (origin, callback) => {
-      // Allow requests with no origin (like mobile apps or curl requests)
-      if (!origin || allowedOrigins.includes(origin)) {
-        callback(null, true);
-      } else {
-        callback(null, false);
+      // Allow requests with no origin (like mobile apps or server-to-server requests)
+      if (!origin) return callback(null, true);
+
+      // Check if origin is explicitly in allowedOrigins
+      if (allowedOrigins.includes(origin)) {
+        return callback(null, true);
       }
+
+      // Check if origin is any Vercel domain (*.vercel.app)
+      if (/\.vercel\.app$/.test(origin)) {
+        return callback(null, true);
+      }
+
+      // Check if origin is localhost or 127.0.0.1 on any port
+      if (/^http:\/\/(localhost|127\.0\.0\.1)(:\d+)?$/.test(origin)) {
+        return callback(null, true);
+      }
+
+      callback(null, false);
     },
     credentials: true,
     methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
@@ -52,6 +73,7 @@ const path = require("path");
 
 // Mount Routes
 app.use("/api/auth", authRoutes);
+app.use("/api/events", apiRateLimiter, eventRoutes);
 
 // Simple Health Check
 app.get("/api/health", (req, res) => {
@@ -62,7 +84,7 @@ app.get("/api/health", (req, res) => {
 const clientDistPath = path.join(__dirname, "../client/dist");
 if (require("fs").existsSync(clientDistPath)) {
   app.use(express.static(clientDistPath));
-  app.get("*", (req, res, next) => {
+  app.use((req, res, next) => {
     if (req.path.startsWith("/api/")) return next();
     res.sendFile(path.join(clientDistPath, "index.html"));
   });

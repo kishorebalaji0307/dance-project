@@ -6,9 +6,9 @@ import { User, Mail, Calendar, LogOut, Award, Sparkles, BookOpen, Clock } from "
 import { useNavigate } from "react-router-dom";
 
 const myClassesMock = [
-  { id: 1, name: "Bharatanatyam (Classical)", instructor: "Smt. Priya", time: "Mon & Wed • 5:00 PM", level: "Intermediate" },
-  { id: 2, name: "Hip Hop & Street Dance", instructor: "Jack Sterling", time: "Tue & Thu • 6:30 PM", level: "Beginner to Pro" },
-  { id: 3, name: "Zumba & Dance Fitness", instructor: "Elena Gomez", time: "Sat • 7:00 AM", level: "All Levels" },
+  { id: 1, name: "Bharatanatyam (Classical)", instructor: "Sri Janani", time: "Mon & Wed • 5:00 PM" },
+  { id: 2, name: "Hip Hop & Street Dance", instructor: "Sri Janani", time: "Tue & Thu • 6:30 PM" },
+  { id: 3, name: "Zumba & Dance Fitness", instructor: "Sri Janani", time: "Sat • 7:00 AM" },
 ];
 
 const Dashboard = () => {
@@ -51,16 +51,33 @@ const Dashboard = () => {
               </h1>
             </motion.div>
 
-            <motion.button
-              initial={{ opacity: 0, x: 30 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.6 }}
-              onClick={handleLogout}
-              className="inline-flex items-center gap-3 rounded-full border border-red-200 bg-red-50 px-6 py-3 font-semibold text-red-500 hover:bg-red-500 hover:text-white hover:border-red-500 transition-all duration-300 self-start cursor-pointer text-sm"
-            >
-              <LogOut size={15} />
-              Log Out
-            </motion.button>
+            <div className="flex flex-wrap items-center gap-3 self-start">
+              {user?.role === "admin" && (
+                <button
+                  id="admin-event-mgmt-btn"
+                  onClick={() => navigate("/admin/dashboard")}
+                  className="inline-flex items-center gap-2 rounded-full px-6 py-3 font-bold text-black shadow-lg transition-all duration-300 hover:scale-105 cursor-pointer text-sm"
+                  style={{
+                    background: "linear-gradient(135deg, #8B6914, #C9A227, #E8C94A)",
+                    boxShadow: "0 4px 18px rgba(201,162,39,0.35)",
+                  }}
+                >
+                  <Sparkles size={15} />
+                  Manage Events & Posters
+                </button>
+              )}
+
+              <motion.button
+                initial={{ opacity: 0, x: 30 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.6 }}
+                onClick={handleLogout}
+                className="inline-flex items-center gap-2 rounded-full border border-red-200 bg-red-50 px-6 py-3 font-semibold text-red-500 hover:bg-red-500 hover:text-white hover:border-red-500 transition-all duration-300 cursor-pointer text-sm"
+              >
+                <LogOut size={15} />
+                Log Out
+              </motion.button>
+            </div>
           </div>
 
           <div className="mt-10 grid lg:grid-cols-3 gap-8">

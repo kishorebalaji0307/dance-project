@@ -73,7 +73,7 @@ const About = () => {
           <img
             src={aboutImg}
             alt="5678 Dance & Fitness Studio"
-            className="h-[240px] w-full object-cover transition duration-700 hover:scale-[1.03] sm:h-[380px] md:h-[520px]"
+            className="w-full h-auto aspect-[16/10] sm:aspect-[16/9] md:max-h-[520px] object-cover transition duration-700 hover:scale-[1.02]"
             style={{ objectPosition: "center" }}
           />
 

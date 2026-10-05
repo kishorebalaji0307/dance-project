@@ -50,7 +50,7 @@ const Team = () => {
           <div className="grid items-center lg:grid-cols-2">
 
             {/* Left Image */}
-            <div className="relative flex items-center justify-center p-10 lg:p-16 bg-[#FAFAF5]">
+            <div className="relative flex items-center justify-center p-6 sm:p-10 lg:p-16 bg-[#FAFAF5] overflow-hidden">
               {/* Glow */}
               <div className="hidden sm:block absolute h-[320px] w-[320px] rounded-full bg-[#C9A227]/12 blur-[90px] sm:h-[400px] sm:w-[400px] sm:blur-[120px]" />
               {/* Decorative rings */}
@@ -62,7 +62,7 @@ const Team = () => {
                 transition={{ duration: 0.5 }}
                 src={teamImage}
                 alt="5678 Team"
-                className="relative z-10 w-full max-w-[260px] object-contain sm:max-w-[380px] lg:max-h-[500px] lg:max-w-none drop-shadow-[0_12px_30px_rgba(0,0,0,0.10)]"
+                className="relative z-10 w-full max-w-[240px] sm:max-w-[360px] lg:max-h-[500px] lg:max-w-none h-auto object-contain mx-auto drop-shadow-[0_12px_30px_rgba(0,0,0,0.10)]"
               />
             </div>
 

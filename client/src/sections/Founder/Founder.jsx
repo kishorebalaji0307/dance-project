@@ -28,11 +28,11 @@ const Founder = () => {
             <img
               src={founder}
               alt="Mrs. Chitra — Founder"
-              className="relative w-full max-w-[300px] sm:max-w-[400px] lg:max-w-[480px] rounded-[28px] sm:rounded-[36px] object-contain shadow-[0_20px_60px_rgba(0,0,0,0.12),0_0_0_1.5px_rgba(180,140,20,0.20)]"
+              className="relative w-full max-w-[270px] xs:max-w-[300px] sm:max-w-[380px] lg:max-w-[460px] h-auto rounded-[24px] sm:rounded-[36px] object-contain shadow-[0_20px_60px_rgba(0,0,0,0.12),0_0_0_1.5px_rgba(180,140,20,0.20)] mx-auto"
             />
 
             {/* Floating label */}
-            <div className="absolute -bottom-4 -right-4 sm:-bottom-5 sm:-right-5 rounded-2xl border border-gray-100 bg-white px-5 py-3 shadow-[0_10px_35px_rgba(0,0,0,0.10)]">
+            <div className="absolute -bottom-3 -right-2 sm:-bottom-5 sm:-right-5 rounded-2xl border border-gray-100 bg-white px-4 py-2.5 sm:px-5 sm:py-3 shadow-[0_10px_35px_rgba(0,0,0,0.10)]">
               <p className="text-xs font-bold uppercase tracking-[0.35em] text-[#C9A227]">Founder</p>
               <p className="mt-0.5 text-xs text-gray-400">5678 Dance Studio</p>
             </div>
